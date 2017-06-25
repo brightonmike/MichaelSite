@@ -4,22 +4,27 @@
     <title>{{ .Title }}</title>
     <meta charset="UTF-8">
     <meta name="description" content="{{ .Description }}">
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
     <main>
         {{ range first 10 .Data.Pages }}
         {{ if eq .Type "articles" }}
-            <article>
-                <h1>
+        <div class="row">
+            <div class="column column-m-12 column-t-8">
+                <article>
+                    <h1>
+                        <a href="{{ .Permalink }}">
+                            {{ .Title }}
+                        </a>
+                    </h1>
+                    {{ .Summary }}
                     <a href="{{ .Permalink }}">
-                        {{ .Title }}
+                        Read the full article
                     </a>
-                </h1>
-                {{ .Summary }}
-                <a href="{{ .Permalink }}">
-                    Read the full article
-                </a>
-            </article>
+                </article>
+            </div>
+        </div>
         {{ end }}
         {{ end }}
     </main>
