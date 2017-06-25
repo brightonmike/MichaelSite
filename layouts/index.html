@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ .Title }}</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="{{ .Description }}">
-    <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
+{{ partial "header.html" . }}
     <main>
         {{ range first 10 .Data.Pages }}
         {{ if eq .Type "articles" }}
@@ -28,5 +20,4 @@
         {{ end }}
         {{ end }}
     </main>
-</body>
-<html>
+{{ partial "footer.html" . }}
