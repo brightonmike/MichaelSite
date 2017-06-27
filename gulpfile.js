@@ -34,6 +34,10 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('./static/css/'))
 });
 
+gulp.task('copy', function () {
+    gulp.src('./assets/admin/*')
+        .pipe(gulp.dest('./static/admin'));
+});
 
 gulp.task('bullets-js', function() {
   return gulp.src([
@@ -86,4 +90,4 @@ gulp.task('watch', function() {
 });
 
 // Run styles and bullets-js
-gulp.task('default', ['styles', 'bullets-js']);
+gulp.task('default', ['styles', 'bullets-js', 'copy']);
