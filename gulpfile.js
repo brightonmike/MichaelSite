@@ -39,6 +39,12 @@ gulp.task('copy', function () {
         .pipe(gulp.dest('./static/admin'));
 });
 
+
+gulp.task('images', function () {
+    gulp.src('./assets/images/uploads/*')
+        .pipe(gulp.dest('./static/images/uploads'));
+});
+
 gulp.task('bullets-js', function() {
   return gulp.src([
     './assets/scripts/*.js',
@@ -90,4 +96,4 @@ gulp.task('watch', function() {
 });
 
 // Run styles and bullets-js
-gulp.task('default', ['styles', 'bullets-js', 'copy']);
+gulp.task('default', ['styles', 'bullets-js', 'copy', 'images']);
