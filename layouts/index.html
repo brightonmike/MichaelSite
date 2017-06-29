@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
     <main>
         {{ range first 10 .Data.Pages }}
-        {{ if eq .Type "articles" }}
+        {{ if eq .Type "posts" }}
         <div class="row">
             <div class="column column-m-12 column-t-8">
                 <article>
