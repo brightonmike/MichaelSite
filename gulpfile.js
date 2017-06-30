@@ -23,7 +23,7 @@ gulp.task('styles', function() {
             this.emit('end');
         }))
         .pipe(sourcemaps.init()) // Start Sourcemaps
-        .pipe(sass({ outputStyle: 'compressed' }))
+        .pipe(sass({ outputStyle: 'expanded' }))
         .pipe(autoprefixer({
             browsers: ['last 5 versions'],
             cascade: false
@@ -34,11 +34,15 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('./static/css/'))
 });
 
-gulp.task('copy', function () {
+gulp.task('admin', function () {
     gulp.src('./assets/admin/*')
         .pipe(gulp.dest('./static/admin'));
 });
 
+gulp.task('fonts', function () {
+    gulp.src('./assets/fonts/*')
+        .pipe(gulp.dest('./static/fonts'));
+});
 
 gulp.task('images', function () {
     gulp.src('./assets/images/uploads/*')
@@ -96,4 +100,4 @@ gulp.task('watch', function() {
 });
 
 // Run styles and bullets-js
-gulp.task('default', ['styles', 'bullets-js', 'copy', 'images']);
+gulp.task('default', ['styles', 'bullets-js', 'admin', 'fonts', 'images']);
