@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: https://github.com/brightonmike/MichaelSite
+  repo: brightonmike/MichaelSite
   branch: master
 publish_mode: editorial_workflow
 media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
