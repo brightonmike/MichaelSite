@@ -1,4 +1,7 @@
-
+h6 {
+	text-transform: uppercase;
+	letter-spacing: 10px;	
+}
 
 
 .hero {
@@ -56,11 +59,12 @@
 		flex: 0 0 100%;
 		font-weight: 400;
 		color: $white;
-		margin-bottom: rem-calc(10);
+		margin: rem-calc(-20 0 10);
 	}	
 }
 
 .intro {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -83,6 +87,7 @@
 	}
 
 	h4 {
+		font-style: italic;
 		margin: rem-calc(0 0 20);
 		color: $green;
 	}
@@ -93,11 +98,114 @@
 	}
 }
 
+.articlegroup {
+	background: rgba($black, 0.55);
+
+	h6 {
+		background: rgba($black, 0.55);
+		padding: $global-padding;
+		color: $white;
+
+		@include breakpoint(tablet){
+			background: none;
+			padding: $global-padding*3 $global-padding 0;
+			grid-column: 1/6;
+			grid-row: 1;			
+			text-align: center;
+		}
+	}
+
+	@include breakpoint(tablet){
+		display: grid;
+		grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	}
+}
+
+.article {
+	background: $light-gray;
+	padding: $global-padding;
+
+	h2, p {
+		margin-bottom: 0.8em;
+	}
+
+	p {
+		line-height: 1.5;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	@include breakpoint(tablet){
+		display: flex;
+		align-items: center;
+	}
+}
+
+.article:first-of-type {
+	background: linear-gradient(20deg, darken($primary, 5%) 0%, darken($primary, 10%) 80%);
+
+	h2, h2 a {
+		color: $green;
+	}
+
+	p, a {
+		color: $white;
+	}
+
+	@include breakpoint(tablet){
+		grid-column: 1/6;
+		grid-row: 2;
+		width: 100%;
+		margin: rem-calc(250 80 50);
+		padding: rem-calc(50);
+		transform: skew(-10deg);
+		transition: border-radius 0.2s ease;
+		border: 10px solid $green;
+
+		p, a {
+			transform: skew(10deg);
+		}
+	}
+
+	@include breakpoint(desktop){
+		grid-column: 3/6;
+		grid-row: 1;
+	}
+}
+
+.article:last-of-type {
+	background: linear-gradient(15deg, desaturate($red, 5%) 0%, darken($purple, 5%) 80%);
+
+	h2 a {
+		color: $white;
+	}
+
+	p {
+		color: rgba($white, 0.85);
+	}
+
+	@include breakpoint(tablet){
+		grid-column: 2/8;
+		margin: rem-calc(100 100 200);
+		padding: rem-calc(70);
+	}
+
+	@include breakpoint(desktop){
+		grid-column: 4/8;
+		text-align: center;
+		padding: rem-calc(70 90);
+	}
+}
+
 .button {
+	// transform: skew(-10deg);
 	border: 2px solid $primary;
 
 	&:hover {
-		letter-spacing: 4px;
+		// transform: skew(-15deg);
+		letter-spacing: 5px;
 	}
 }
 
@@ -107,5 +215,31 @@
 
 	&:hover {
 		color: $secondary;
+	}
+}
+
+.readmore {
+	font-weight: 900;
+	letter-spacing: 1px;
+	color: $white;
+	border-bottom: 1px solid $white;
+	border-right: 4px solid transparent;
+	padding: rem-calc(0 4 4 0);
+
+	&:hover {
+		color: $white;
+		border-bottom-width: 2px;
+	}
+}
+
+footer {
+	text-align: center;
+	padding: $global-padding;
+	background: $primary;
+
+	p {
+		margin:0;
+		font-weight: 900;
+		color: darken($primary, 20%);
 	}
 }
