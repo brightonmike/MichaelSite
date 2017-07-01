@@ -23,9 +23,9 @@ gulp.task('styles', function() {
             this.emit('end');
         }))
         .pipe(sourcemaps.init()) // Start Sourcemaps
-        .pipe(sass({ outputStyle: 'expanded' }))
+        .pipe(sass({ outputStyle: 'compressed' }))
         .pipe(autoprefixer({
-            browsers: ['last 5 versions'],
+            browsers: ['last 3 versions'],
             cascade: false
         }))
         .pipe(gulp.dest('./static/css/'))
