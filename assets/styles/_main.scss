@@ -5,10 +5,14 @@ h6 {
 
 .home {
 	background: url('../images/bg.jpg'), $primary;
-	background-size:cover;
+	background-size: auto 100%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-blend-mode: color-dodge;	
+
+	@include breakpoint(desktop){
+		background-size:cover;		
+	}
 }
 
 .hero {
@@ -139,10 +143,6 @@ h6 {
 }
 
 .articlegroup {
-	background: url('../images/bg2.jpg'), linear-gradient(20deg, darken($primary, 5%) 0%, darken($primary, 10%) 80%);
-	background-size: cover;
-	background-attachment: fixed;
-	background-blend-mode: soft-light;	
 
 	h6 {
 		background: darken($primary, 10%);
@@ -159,6 +159,10 @@ h6 {
 	}
 
 	@include breakpoint(tablet){
+		background: url('../images/bg2.jpg'), linear-gradient(20deg, darken($primary, 5%) 0%, darken($primary, 10%) 80%);
+		background-size: cover;
+		background-attachment: fixed;
+		background-blend-mode: soft-light;	
 		display: grid;
 		grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 		grid-template-rows: rem-calc(200) 1fr 1fr;
