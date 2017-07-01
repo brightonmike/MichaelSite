@@ -61,38 +61,36 @@
 }
 
 .intro {
-	padding: $global-padding;
-	
-}
-
-aside {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 
-	background: $primary;
-	padding: $global-padding*3;
-	margin-top: 90vh;
+	background: linear-gradient(20deg, $primary 0%, darken($primary, 10%) 80%);
+	padding: $global-padding*3 $global-padding;
+	@include breakpoint(tablet){
+		padding: $global-padding*3;
+	}
+	margin-top: 100vh;
 	text-align: center;
 	min-height: 65vh;
 
-	p {
+	h4,h5,p {
 		flex: 0 0 100%;
-		color: $white;
-		font-size: rem-calc(35);
-		margin: 0;
+		max-width: rem-calc(750);
+		margin: 0 auto;
 	}
-}
 
-.intro__inner {
-	position: relative;
-	z-index: 88;
-	background: linear-gradient(20deg, $red 0%, $purple 80%);
-	padding: $global-padding*3;
-	margin: rem-calc(100 0 0);
-	margin-left: 50%;
-	max-width: rem-calc(800);
+	h4 {
+		margin: rem-calc(0 0 20);
+		color: $green;
+	}
+
+	p {
+		margin: rem-calc(0 0 20);
+		color: rgba($white, 0.8);
+	}
 }
 
 .button {
@@ -106,4 +104,8 @@ aside {
 .button--secondary {
 	color: $secondary;
 	border-color: $secondary;
+
+	&:hover {
+		color: $secondary;
+	}
 }
