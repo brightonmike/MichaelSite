@@ -318,6 +318,7 @@ h6 {
 .button {
 	// transform: skew(-10deg);
 	border: 2px solid $primary;
+	text-align: center;
 
 	&:hover {
 		color: $secondary;
