@@ -1,8 +1,13 @@
 {{ partial "header.html" . }}
-    <main>
-        <article>
+<div class="wrap">
+	<labeL>Dark/Light</label>
+	<input type="checkbox" id="theme" name="theme">
+
+    <main class="page">
+        <article class="page__article">
             <h1>{{ .Title }}</h1>
             {{ .Content }}
         </article>
     </main>
+</div>
 {{ partial "footer.html" . }}

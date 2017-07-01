@@ -102,7 +102,7 @@ h6 {
 	background: rgba($black, 0.55);
 
 	h6 {
-		background: rgba($black, 0.55);
+		background: darken($primary, 10%);
 		padding: $global-padding;
 		color: $white;
 
@@ -196,6 +196,84 @@ h6 {
 		grid-column: 4/8;
 		text-align: center;
 		padding: rem-calc(70 90);
+	}
+}
+
+.wrap {
+	background: linear-gradient(40deg, $red 0%, $purple 80%);
+	color: $white;
+	padding: rem-calc(40 0);
+}
+
+.wrap label {
+	display: block;
+	width: 100%;
+	text-align: center;
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+}
+
+.wrap input[type=checkbox] {
+	appearance: none;
+	display: block;
+	position: relative;
+	background: $white;
+	width: rem-calc(100);
+	height: rem-calc(20);
+	margin: rem-calc(8) auto rem-calc(40);
+
+	&::after {
+		content: '';
+		position: absolute;
+		width: 40%;
+		top: rem-calc(0);
+		bottom: rem-calc(0);
+		left: rem-calc(0);
+		background: $primary;
+		transition: 0.1s ease;
+	}
+}
+
+.wrap input[type=checkbox]:checked {
+	&::after {
+		left: auto;
+		right: rem-calc(0);
+	}
+}
+
+.wrap input[type=checkbox]:checked + .page {
+	background: $white;
+	color: darken($primary, 10%);
+
+	h1, h2, h3, h4, h5, h6, p {
+		color: darken($primary, 10%);
+	}
+} 
+
+.page {
+	background: linear-gradient(20deg, $primary 0%, darken($primary, 10%) 80%);
+	padding: $global-padding;
+}
+
+
+.page__article {
+	max-width: rem-calc(800);
+	margin: rem-calc(100) auto;
+	color: $white;
+
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: 1em;
+	}
+
+	p {
+		color: $white;
+
+		@include breakpoint(desktop){
+			line-height: 1.8;
+			font-size: rem-calc(22);
+			margin-bottom: 1.5em;
+		}
 	}
 }
 
