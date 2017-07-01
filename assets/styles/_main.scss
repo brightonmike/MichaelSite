@@ -4,14 +4,17 @@ h6 {
 }
 
 .home {
-	background: url('../images/bg.jpg'), $primary;
+	background: url('../images/bg-mob.jpg'), $primary;
 	background-size: auto 100%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-blend-mode: color-dodge;	
 
 	@include breakpoint(desktop){
-		background-size:cover;		
+		background: url('../images/bg.jpg'), $primary;
+		background-size:cover;	
+		background-repeat: no-repeat;
+		background-attachment: fixed;
 	}
 }
 
