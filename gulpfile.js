@@ -45,8 +45,8 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('images', function () {
-    gulp.src('./assets/images/uploads/*')
-        .pipe(gulp.dest('./static/images/uploads'));
+    gulp.src('./assets/images/*')
+        .pipe(gulp.dest('./static/images'));
 });
 
 gulp.task('bullets-js', function() {

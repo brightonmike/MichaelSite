@@ -1,16 +1,43 @@
 {{ partial "header.html" . }}
+<div class="page">
+
+    <header class="hero">
+
+        <h1>I am a...</h1>
+        <h3>Frontend<br>developer</h3>
+
+    </header>
+
+    <aside>
+        <p>In goes code. Out goes website.</p>
+
+        <a class="button button--secondary" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=hY7m5jjJ9mM">click for cats</a>
+    </aside>
+
+    <section class="intro">
+        <div class="intro__inner">
+            <h3>The serious bit</h3>
+
+            <h4>If the cats aren't doing it for you (seriously?!), here's a bit about me.</h4>
+
+            <p>I work for a small agency in Brighton, building websites, pattern libraries and other digital products. I believe in a fast loading, easy to use and enjoyable end result. Accessiblity, flexibility and well written code are also important beliefs.</p>
+
+            <p>You can read my <a href="">ramblings</a>, or see some of my <a href="">work</a>.</p>
+        </div>
+    </section>
+
     <main>
         {{ range first 10 .Data.Pages }}
         {{ if eq .Type "posts" }}
         <div class="row">
             <div class="column column-m-12 column-t-8">
                 <article>
-                    <h1>
+                    <h2>
                     {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }}
                         <a href="{{ .Permalink }}">
                             {{ .Title }}
                         </a>
-                    </h1>
+                    </h2>
                     <img src="">
 
                     {{ .Summary }}
@@ -23,4 +50,7 @@
         {{ end }}
         {{ end }}
     </main>
+
+
+</div>
 {{ partial "footer.html" . }}

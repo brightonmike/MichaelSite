@@ -1,5 +1,6 @@
+@import "../../node_modules/bullets-sass/scss/mixins";
 // Global
-$global-font-family:'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$global-font-family:'Maven Pro', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $global-font-size:16px;
 $global-line-height:1.2;
 $global-font-weight:300;
@@ -15,17 +16,22 @@ $global-weight-bold: 700;
 
 
 // Colour Scheme
-$primary: #ec4f49;
-$secondary: #0e121d;
+$primary: #302167;
+$secondary: #03ffff;
 $success: #3adb76;
 $warning: #ffae00;
 $alert: #cc4b37;
 
-$light-gray: #e6e6e6;
+$light-gray: #f8f8f8;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
+
+$red: #ff0022;
+$purple: #cc009b;
+$green: #03ffff;
+
 
 // Typography
 $h1-base-size:24px;
@@ -36,10 +42,10 @@ $h5-base-size:18px;
 $h6-base-size:16px;
 
 $h1-font-sizes: (
-  null  : 28px,
-  tablet : 31px,
-  laptop: 33px,
-  desktop : 36px
+  null  : 18px,
+  tablet : 30px,
+  laptop: 35px,
+  desktop : 30px
 );
 
 $h2-font-sizes: (
@@ -52,8 +58,8 @@ $h2-font-sizes: (
 $h3-font-sizes: (
   null  : 28px,
   tablet : 31px,
-  laptop: 33px,
-  desktop : 36px
+  laptop: 55px,
+  desktop : 85px
 );
 
 $h4-font-sizes: (
@@ -77,9 +83,9 @@ $h6-font-sizes: (
   desktop : 36px
 );
 
-$header-font-family:'Jaapokki-Enchance', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$header-font-family:'Maven Pro', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $header-line-height:1.2;
-$header-bottom-margin:rem-calc(30);
+$header-bottom-margin: 0;
 
 $paragraph-line-height:1.6;
 $paragraph-margin-bottom:1.2rem;
@@ -110,12 +116,12 @@ $input-focus-border-color:$primary;
 // buttons
 $button-padding-topbottom:14px;
 $button-padding-leftright:40px;
-$button-background: $primary;
-$button-text-color: $white;
+$button-background: transparent;
+$button-text-color: $primary;
 $button-text-transform: uppercase;
 $button-letter-spacing: 3px;
 $button-font-size:rem-calc(14);
-$button-rounded:true;
+$button-rounded:false;
 $button-border-radius:40px;
 
 // tables
