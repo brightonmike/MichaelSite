@@ -5,7 +5,8 @@ h6 {
 
 .home {
 	background: url('../images/bg.jpg'), $primary;
-	background-size: 100%;
+	background-size:cover;
+	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-blend-mode: color-dodge;	
 }
@@ -139,7 +140,7 @@ h6 {
 
 .articlegroup {
 	background: url('../images/bg2.jpg'), linear-gradient(20deg, darken($primary, 5%) 0%, darken($primary, 10%) 80%);
-	background-size: 100%;
+	background-size: cover;
 	background-attachment: fixed;
 	background-blend-mode: soft-light;	
 
