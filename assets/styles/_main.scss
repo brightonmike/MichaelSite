@@ -72,7 +72,7 @@ h6 {
 		text-transform: uppercase;
 		letter-spacing: 12px;		
 		color: $white;
-		margin: rem-calc(-20 0 10);
+		margin: rem-calc(-40 0 10);
 	}	
 }
 
@@ -292,12 +292,36 @@ h6 {
 	background: linear-gradient(20deg, $primary 0%, darken($primary, 10%) 80%);
 	padding: $global-padding;
 	min-height: 100vh;
+
+	h1, h2 {
+		color: $green;
+	}
+
+	h1 {
+		font-size: rem-calc(28);
+
+		@include breakpoint(tablet){
+			font-size: rem-calc(31);
+		}
+
+		@include breakpoint(laptop){
+			font-size: rem-calc(33);
+		}
+
+		@include breakpoint(desktop){
+			font-size: rem-calc(36);
+		}		
+	}
 }
 
 
 .page__article {
 	max-width: rem-calc(800);
-	margin: rem-calc(100) auto;
+	margin: rem-calc(40) auto;
+
+	@include breakpoint(desktop){
+		margin: rem-calc(100) auto;
+	}
 	color: $white;
 
 	h1, h2, h3, h4, h5, h6 {
