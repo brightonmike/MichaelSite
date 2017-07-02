@@ -1,4 +1,4 @@
-baseURL = "https://chess-master-walrus-12138.netlify.com/"
+baseURL = "https://michael.netlify.com/"
 languageCode = "en-us"
 relativeURLs = "true"
 title = "My New Hugo Site"
