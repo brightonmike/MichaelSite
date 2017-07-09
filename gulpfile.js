@@ -34,10 +34,10 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('./static/css/'))
 });
 
-gulp.task('admin', function () {
-    gulp.src('./assets/admin/*')
-        .pipe(gulp.dest('./static/admin'));
-});
+// gulp.task('admin', function () {
+//     gulp.src('./assets/admin/*')
+//         .pipe(gulp.dest('./static/admin'));
+// });
 
 gulp.task('fonts', function () {
     gulp.src('./assets/fonts/*')
@@ -100,4 +100,4 @@ gulp.task('watch', function() {
 });
 
 // Run styles and bullets-js
-gulp.task('default', ['styles', 'bullets-js', 'admin', 'fonts', 'images']);
+gulp.task('default', ['styles', 'bullets-js', 'fonts', 'images']);
