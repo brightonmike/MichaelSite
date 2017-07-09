@@ -10,6 +10,7 @@
     <main class="page">
         <article class="page__article">
             <h1>{{ .Title }}</h1>
+            {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }}
             {{ .Content }}
         </article>
     </main>
