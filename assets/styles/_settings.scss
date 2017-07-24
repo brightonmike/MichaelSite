@@ -1,10 +1,10 @@
 @import "../../node_modules/bullets-sass/scss/mixins";
 // Global
-$global-font-family:'Maven Pro', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$global-font-family:'Lora', serif;
 $global-font-size:16px;
 $global-line-height:1.2;
 $global-font-weight:300;
-$text-color:#222222;
+$text-color:#c4c6e6;
 $global-width:1200px;
 
 $global-margin: 2rem;
@@ -16,8 +16,9 @@ $global-weight-bold: 700;
 
 
 // Colour Scheme
-$primary: #302167;
-$secondary: #03ffff;
+$primary: #2b2d5c;
+$primary-light: #c4c6e6;
+$secondary: #d3a93d;
 $success: #3adb76;
 $warning: #ffae00;
 $alert: #cc4b37;
@@ -77,15 +78,15 @@ $h5-font-sizes: (
 );
 
 $h6-font-sizes: (
-  null  : 28px,
-  tablet : 31px,
-  laptop: 33px,
-  desktop : 36px
+  null  : 22px,
+  tablet : 24px,
+  laptop: 26px,
+  desktop : 28px
 );
 
-$header-font-family:'Maven Pro', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$header-font-family:'Movement', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $header-line-height:1.2;
-$header-bottom-margin: 0;
+$header-bottom-margin: 0.65em;
 
 $paragraph-line-height:1.6;
 $paragraph-margin-bottom:1.2rem;
@@ -120,7 +121,7 @@ $button-background: transparent;
 $button-text-color: $primary;
 $button-text-transform: uppercase;
 $button-letter-spacing: 3px;
-$button-font-size:rem-calc(14);
+$button-font-size:rem-calc(18);
 $button-rounded:false;
 $button-border-radius:40px;
 

@@ -1,9 +1,9 @@
-@font-face {
-    font-family: 'Jaapokki';
-    src: url(../fonts/jaapokkisubtract-regular.woff) format("woff");
-}
 
 @font-face {
-    font-family: 'Jaapokki-Enchance';
-    src: url(../fonts/jaapokkienchance-regular.woff) format("woff");
+	font-family: 'Movement';
+	src: url('../fonts/MovementBold.woff2') format('woff2'),
+		url('../fonts/MovementBold.woff') format('woff');
+	font-weight: 800;
+	font-style: normal;
 }
+
