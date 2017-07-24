@@ -7,7 +7,7 @@ image: null
 
 _pattern libraries are immensely challenging and require constant cyclical iteration, careful consideration of naming and structure, a renewed realisation to work with CSS instead of against it, and a keen design eye_
 
-I’ve been a front-end developer now for several years. Over that time, I’ve become pretty good at taking PSDs and turning them into pixel perfect WordPress websites. Fluid, accessible, fast and flexible, my builds are pretty good. This may sound a little arrogant, but the truth is, having probably built over 60 WordPress websites by now, I really _should_be good at it. We learn by doing and we make our mistakes along the way, but if we keep at something, we’ll get better at it.
+I’ve been a front-end developer now for several years. Over that time, I’ve become pretty good at taking PSDs and turning them into pixel perfect WordPress websites. Fluid, accessible, fast and flexible, my builds are pretty good. This may sound a little arrogant, but the truth is, having probably built over 60 WordPress websites by now, I really _should_ good at it. We learn by doing and we make our mistakes along the way, but if we keep at something, we’ll get better at it.
 
 This year, I had the opportunity to branch into another discipline — pattern libraries. Unlike WordPress and static sites, pattern libraries are instead a collection of styled front-end components, then used to assemble various apps, websites, landing pages and more. Imagine if you took a website, and broke it down into header, footer, menu, logo, etc — this is effectively a pattern library. It acts as a reference point for developers, but also as a single source of truth. The library becomes the definition for how a companies brand should be used online.
 
