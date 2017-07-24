@@ -1,0 +1,41 @@
+---
+title: Lessons learned from a first pattern library
+date: 2017-07-24T21:04:43.961Z
+image: null
+---
+**tl:dr;**
+
+_pattern libraries are immensely challenging and require constant cyclical iteration, careful consideration of naming and structure, a renewed realisation to work with CSS instead of against it, and a keen design eye_
+
+I’ve been a front-end developer now for several years. Over that time, I’ve become pretty good at taking PSDs and turning them into pixel perfect WordPress websites. Fluid, accessible, fast and flexible, my builds are pretty good. This may sound a little arrogant, but the truth is, having probably built over 60 WordPress websites by now, I really _should_be good at it. We learn by doing and we make our mistakes along the way, but if we keep at something, we’ll get better at it.
+
+This year, I had the opportunity to branch into another discipline — pattern libraries. Unlike WordPress and static sites, pattern libraries are instead a collection of styled front-end components, then used to assemble various apps, websites, landing pages and more. Imagine if you took a website, and broke it down into header, footer, menu, logo, etc — this is effectively a pattern library. It acts as a reference point for developers, but also as a single source of truth. The library becomes the definition for how a companies brand should be used online.
+
+To make my challenge even greater, I’d then be applying the libraries components to an existing Angular front-end that hooks onto a PHP API. Although I’ve worked on Angular projects before, it was a while ago, and with nearly 200 template files alone, this was on a whole new level. I’m not one to pass up the challenge however, and I also identified the business opportunity for the agency I work for in diversifying, so we took it on. I knew full well there was going to be a steep learning curve.
+
+The first challenge was picking a tool to create the library. In this respect, pickings are pretty slim, and the tools we do have are in relatively early stages of development. Pattern Libraries are an emerging trend, partly thanks to the excellent efforts of advocates such as Brad Frost. Brad himself has helped create a tool called Pattern Lab which can be used to create design systems. Unfortunately, I wasn’t able to get my head around it in a way that I felt confident enough to use it.
+
+Luckily, an agency in the same town as me, and one who’s work I’m familiar with, Clearleft, have also developed a tool which fitted closely to my way of thinking and the approach I felt would work best for this project. Fractal places no rules on how one must arrange your patterns (or indeed what naming convention to use) but instead provides a simple yet feature rich toolset.
+
+I ended up tacking on to Fractal a Gulp based asset pipeline which would handle the compiling and minification of my Sass, SVGs, images and fonts. This build setup would also allow the pattern library to sit directly within any project it was required, with the project then able to compile the styles from the pattern library into its own pipeline.
+
+Once I had decided on the tool, my next job was to get the existing project up and running. I would need to run through the front-end code base and tidy up the code as best I could. Simultaneously, I’d be looking to identify common design patterns that would then feed into the design process. We can’t make up the patterns needed, rather, we have to see what the application requires. This also involved poring over screenshots and pages to see where we could attempt to simplify the build. Many components share similar characteristics, so we were looking to see if there were opportunities to condense.
+
+Patterns would then be designed in Sketch whilst at the same time prototyped in Fractal. What became clear very quickly was that the design, build and implementation of a pattern library was not a linear process, but rather cyclical and iterative. We would go back and forth between project, library and designs numerous times until we had harmony between all three. This takes time, and mistakes were common, especially due to the complex nature of the build of the project.
+
+Eventually, however, we had a set of components that looked great, were flexible and adaptable, and functioned on the project.
+
+One thing I did learn throughout creating my first pattern library was what a huge challenge naming was. We may agonise over the naming of an element when building a simple static site, or even a more complex WordPress build. But with pattern libraries and their application, naming becomes intrinsically difficult. I would choose a name for a pattern, and then start rolling it out, only to find that after I had used it several times, I now needed to use it on a component where the naming no longer made sense. Even now, I look back on some of the naming and I’m not entirely satisfied.
+
+Keeping your code base lean is another challenge. With BEM naming conventions, it can become far too easy to simply tack on endless variations of different elements. BEM is a naming approach that I highly recommend, but it’s not to be treated as a solution to every problem. There are times where nesting a .button class within a parent class is actually the better thing to do, rather than creating, for example, a .button--nomargin variation. It’s often a case of trying to think carefully about how often you are likely to use this set of rules, and where you’ll be using them within the mark up.
+
+Strangely, another aspect of development I felt myself relearning was, in large parts, CSS. We often think we know CSS, yet in so many ways it can still surprise us. All too often, I found myself fighting the cascade, trying to be too clever in finding ways of being specific without increasing specificity. At one point, I realised I was fighting against a fundamental principle of CSS and I re-learned to embrace the cascade. It sounds pretty daft, but it’s an example of how diversifying can help us become better developers, I wouldn’t have done this were it not for taking on the pattern library.
+
+I also learned to consider the wider implications of every decision I made. Every declaration, every naming choice, every rule and every bit of mark up, would have a knock on effect. Not just for the pattern library in terms of its usefulness, but also how it would work for the developers that would be using it and how it would help to keep the code base lean, flexible and free of hazardous bugs.
+
+Pattern libraries also require you to have a keen eye for design. Skills need to be exerted in taking the vision of a designer and turning it into a set of coded components that would fulfill the development criteria of the project. It became a key responsibility of my role to work closely with the design team, educating them on the limitations and possibilities of the libraries. I would need to inform them that the patterns they were creating may be used in many places, with different content, yet still need to work.
+
+But most importantly of all, I learned to accept that I would make many mistakes and I would make decisions that, later on, would reflect poorly. I found this to be the inherent nature of creating a design system in code, it requires you to go back and forth, iterating almost endlessly. No matter how thorough you have been, and how sure you are that you have finished a pattern and it works perfectly, you can be sure that at some point it will need to be tweaked, amended, bug fixed. Pattern Libraries are, essentially then, living design systems and we shouldn’t fear the need to revise and change. Indeed, as I write this, I believe the build I created is being extended and tweaked by the team of developers now utilising it.
+
+Ultimately though, I’m happy with the final result and I believe that the developers using it are enjoying both working with the library as well as extending it as they see fit, with new patterns and amends that fit into the systems they use. Considering this was my first real pattern library project, I feel I coped pretty well with the challenges laid out in front of me. Lessons have been learned, some of them were quite steep, but all of them will be taken into the next project.
+
