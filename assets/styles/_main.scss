@@ -1,20 +1,34 @@
+:root {
+	--body-font-size: 16px;
+
+	@include breakpoint(tablet){
+		--body-font-size: 22px;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $white;
+}
+
 h6 {
 	text-transform: uppercase;
 	letter-spacing: 10px;	
 }
 
+p {
+	font-size: var(--body-font-size);
+	margin-bottom: 1em;
+}
+
 .home {
-	background: url('../images/bg-mob.jpg'), $primary;
-	background-size: auto 100%;
+	background: url('../images/bg2.jpg'), $primary;
+	background-size: auto 100%;	
 	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-blend-mode: color-dodge;	
+	background-attachment: scroll;
 
 	@include breakpoint(desktop){
-		background: url('../images/bg.jpg'), $primary;
-		background-size:cover;	
-		background-repeat: no-repeat;
-		background-attachment: fixed;
+		background: url('../images/bg2.jpg'), $primary;
+		background-size: 100%;
 	}
 }
 
@@ -26,33 +40,17 @@ h6 {
 
 	width: 100%;
 	min-height: 105vh;
-	padding: $global-padding;
+	padding: $global-padding $global-padding 0;
 
+	
+	background:  linear-gradient(0deg, $primary 0%, rgba($primary, 0.7) 100%);
 	color: $white;
 	text-align: center;
-
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 105vh;
-		background: rgba($primary, 0.2);
-		z-index: 2;
-
-		background-image: url('../images/pattern.png');
-		background-size: 450px;
-		background-repeat: repeat;
-		background-attachment: fixed;
-		opacity: 0.95;		
-	}
 
 	h3, h1 {
 		position: relative;
 		z-index: 3;
 	}
-
 
 	h3 {
 		flex: 0 0 100%;
@@ -74,47 +72,12 @@ h6 {
 
 	h1 {
 		flex: 0 0 100%;
-		font-weight: 500;
+		font-weight: 700;
 		text-transform: uppercase;
-		letter-spacing: 12px;		
+		letter-spacing: 8px;		
 		color: $white;
 		margin: rem-calc(-40 0 10);
 	}	
-}
-
-.pageheader {
-	background: $primary;
-	position: relative;
-	z-index: 6;
-	padding: rem-calc(12) $global-padding;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 105vh;
-		background: rgba($primary, 0.8);
-		z-index: 2;
-	}
-
-	h4, a {
-		position: relative;
-		z-index: 3;
-	}
-
-	h4 {
-		font-size: rem-calc(18);
-		font-weight: 500;
-		text-transform: uppercase;
-		letter-spacing: 6px;		
-		color: $white;
-	}	
-
 }
 
 .intro {
@@ -125,68 +88,45 @@ h6 {
 	align-items: center;
 	flex-wrap: wrap;
 
-	background: linear-gradient(20deg, $primary 0%, darken($primary, 10%) 80%);
-	padding: $global-padding*3 $global-padding;
-	@include breakpoint(tablet){
-		padding: $global-padding*3;
-	}
+	background: $primary;
+	padding: 0 $global-padding $global-padding*3;
 	text-align: center;
-	min-height: 65vh;
 
-	h4,h5,p {
+	h4, h5, p {
 		flex: 0 0 100%;
 		max-width: rem-calc(750);
-		margin: 0 auto;
-	}
-
-	h4 {
-		font-style: italic;
-		margin: rem-calc(0 0 20);
-		color: $green;
-	}
-
-	p {
-		margin: rem-calc(0 0 20);
-		color: rgba($white, 0.8);
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 
 .articlegroup {
-
-	h6 {
-		background: darken($primary, 10%);
-		padding: $global-padding;
-		color: $white;
-
-		@include breakpoint(tablet){
-			background: none;
-			padding: $global-padding*3 $global-padding 0;
-			grid-column: 1/6;
-			grid-row: 1;			
-			text-align: center;
-		}
-	}
+	padding: $global-padding 0;
+	background: darken($primary, 5%);
 
 	@include breakpoint(tablet){
-		background: url('../images/bg2.jpg'), linear-gradient(20deg, darken($primary, 5%) 0%, darken($primary, 10%) 80%);
-		background-size: cover;
-		background-attachment: fixed;
-		background-blend-mode: soft-light;	
-		display: grid;
-		grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-		grid-template-rows: rem-calc(200) 1fr 1fr;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	h6 {
+		flex: 0 0 100%;
+		padding: 0 $global-padding;
+
+		@include breakpoint(tablet){
+			padding: $global-padding $global-padding*2;
+		}
 	}
 }
 
 .article {
-	background: linear-gradient(20deg, darken($primary, 5%) 0%, darken($primary, 10%) 80%);
 	padding: $global-padding;
 
 	h2, h2 a {
-		color: $green;
+		color: $secondary;
 	}
 
-	p, a {
+	a {
 		color: $white;
 	}
 
@@ -203,58 +143,107 @@ h6 {
 	}
 
 	@include breakpoint(tablet){
-		display: flex;
-		align-items: center;
-		width: 100%;
-		margin: rem-calc(100 0);
-		padding: rem-calc(50);
-		transform: skew(-10deg);
-		transition: border-radius 0.2s ease;
-		border: 10px solid $green;
+		position: relative;
+		overflow: hidden;
+		margin: rem-calc(40 0);
+		padding: $global-padding $global-padding*2;
+		max-width: rem-calc(700);
 
-		p, a {
-			transform: skew(10deg);
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: $global-padding*2;
+			right: $global-padding*2;
+			height: rem-calc(3);
+			background: $primary;
+			transform: translateY(rem-calc(-3));
+			transition: all 0.2s ease-in-out;
+		}
+
+		&:hover::before {
+			transform: translateY(0);
+			background: $secondary;
 		}
 	}
 }
 
-.article:first-of-type {
+.meta {
+	display: inline-block;
+	font-size: rem-calc(18);
+	background: linear-gradient(40deg, $red 0%, $purple 80%);
+	background-size: rem-calc(200);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;	
+
 	@include breakpoint(tablet){
-		grid-column: 1/6;
-		grid-row: 2;
-		margin-bottom: 0;
+		font-size: rem-calc(20);
 	}
 
-	@include breakpoint(desktop){
-		grid-column: 3/6;
+	.meta--post {
+		font-size: rem-calc(20);
+
+		@include breakpoint(tablet){
+			font-size: rem-calc(22);
+		}
 	}
 }
 
-.article:last-of-type {
-	@include breakpoint(tablet){
-		grid-column: 1/6;
+.pageheader {
+	background: $primary;
+	position: relative;
+	z-index: 6;
+	padding: rem-calc(12) $global-padding 0;
+	display: flex;
+	align-items: center;
+
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 105vh;
+		background: rgba($primary, 0.8);
+		z-index: 2;
 	}
 
-	@include breakpoint(desktop){
-		grid-column: 3/6;
+	h4, a {
+		position: relative;
+		z-index: 3;
+		color: $white;
+		text-decoration: none;
 	}
+
+	h4 {
+		a:hover {
+			color: $secondary;
+			text-decoration: underline;
+		}
+		@include breakpoint(tablet){
+			text-align: center;
+			width: 100%;
+			max-width: rem-calc(1000);
+			margin: rem-calc(20) auto;		
+		}
+	}
+
+
 }
+
 
 .wrap {
 	position: relative;
 	z-index: 77;
 	background: $primary;
 	color: $white;
-	padding: rem-calc(40 0 0);
 }
 
 .wrap label {
-	display: block;
-	width: 100%;
-	text-align: center;
-	font-weight: 900;
-	text-transform: uppercase;
-	letter-spacing: 4px;
+	text-indent:-9999px;
+	color: transparent;
+	height:0;	
 }
 
 .wrap input[type=checkbox] {
@@ -264,24 +253,29 @@ h6 {
 	background: $white;
 	width: rem-calc(100);
 	height: rem-calc(20);
-	margin: rem-calc(8) auto rem-calc(40);
+	margin: 0 $global-padding;
 
 	&::after {
 		content: '';
 		position: absolute;
-		width: 40%;
+		width: 50%;
 		top: rem-calc(0);
 		bottom: rem-calc(0);
 		left: rem-calc(0);
 		background: $secondary;
 		transition: 0.1s ease;
 	}
+
+
+	@include breakpoint(tablet){
+		max-width: rem-calc(1000);
+		margin: 0 auto;		
+	}	
 }
 
 .wrap input[type=checkbox]:checked {
 	&::after {
-		left: auto;
-		right: rem-calc(0);
+		left: 50%;
 	}
 }
 
@@ -295,58 +289,53 @@ h6 {
 } 
 
 .page {
-	background: linear-gradient(20deg, $primary 0%, darken($primary, 10%) 80%);
+	background: darken($primary, 10%);
 	padding: $global-padding;
 	min-height: 100vh;
 
-	h1, h2 {
-		color: $green;
-	}
 
 	h1 {
-		font-size: rem-calc(28);
+		color: $secondary;
+		font-size: rem-calc(32);
 
 		@include breakpoint(tablet){
-			font-size: rem-calc(31);
+			font-size: rem-calc(36);
 		}
 
 		@include breakpoint(laptop){
-			font-size: rem-calc(33);
+			font-size: rem-calc(40);
 		}
 
 		@include breakpoint(desktop){
-			font-size: rem-calc(36);
+			font-size: rem-calc(45);
 		}		
 	}
 }
 
 
 .page__article {
-	max-width: rem-calc(800);
+	max-width: rem-calc(1000);
 	margin: rem-calc(40) auto;
 
 	@include breakpoint(desktop){
 		margin: rem-calc(100) auto;
 	}
-	color: $white;
 
 	h1, h2, h3, h4, h5, h6 {
 		margin-bottom: 1em;
 	}
 
 	p {
-		color: $white;
-
 		@include breakpoint(desktop){
 			line-height: 1.8;
-			font-size: rem-calc(22);
 			margin-bottom: 1.5em;
 		}
 	}
 }
 
 .button {
-	// transform: skew(-10deg);
+	font-family: 'Movement', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+	font-weight: bold;
 	border: 2px solid $primary;
 	text-align: center;
 
@@ -374,37 +363,34 @@ h6 {
 	font-weight: 900;
 	letter-spacing: 1px;
 	color: $white;
-	border-bottom: 1px solid $white;
-	border-right: 4px solid transparent;
-	padding: rem-calc(0 4 4 0);
+	border-bottom: 1px dashed $secondary;
+	padding: rem-calc(0 0 4 0);
 
 	&:hover {
 		color: $white;
-		border-bottom-width: 2px;
+		border-bottom: 1px solid $secondary;
 	}
 }
 
 footer {
 	text-align: center;
-	padding: $global-padding*2 $global-padding;
+	padding: $global-padding;
 	background: $primary;
-
-	background: linear-gradient(20deg, $red 0%, $purple 80%);
+	border-top: 1px solid rgba($primary-light, 0.5);
 
 	p {
 		margin:0;
-		font-weight: 900;
-		color: darken($primary, 10%);
 	}
 
 	p a {
-		color: $primary;
+		color: $secondary;
 		margin: rem-calc(5 15);
 		text-decoration: none;
-		border-bottom: 2px solid rgba($primary, 0.1);
+		border-bottom: 1px dotted $secondary;
 
 		&:hover {
-			border-bottom: 2px solid $primary;
+			color: $secondary;
+			border-bottom: 1px solid $secondary;
 		}
 	}
 }

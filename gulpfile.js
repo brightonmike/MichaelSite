@@ -96,6 +96,8 @@ gulp.task('watch', function() {
   // Watch bullets-js files
   gulp.watch('./assets/scripts/*.js', ['bullets-js']);
 
+  gulp.watch('./assets/images/*', ['images']);
+
 
 });
 
