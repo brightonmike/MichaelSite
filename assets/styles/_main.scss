@@ -21,8 +21,8 @@ p {
 }
 
 .home {
-	background: url('../images/bg2.jpg'), $primary;
-	background-size: auto 100%;	
+	background: url('../images/bg2-mobile.jpg'), $primary;
+	background-size: 100%;
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 
@@ -39,9 +39,7 @@ p {
 	flex-wrap: wrap;
 
 	width: 100%;
-	min-height: 105vh;
-	padding: $global-padding $global-padding 0;
-
+	padding: $global-padding*3 $global-padding;
 	
 	background:  linear-gradient(0deg, $primary 0%, rgba($primary, 0.7) 100%);
 	color: $white;
@@ -57,13 +55,17 @@ p {
 		font-weight: 900;
 		font-style: italic;
 		text-transform: uppercase;
-		letter-spacing: 18px;
+		letter-spacing: 16px;
 
 		background: linear-gradient(20deg, $red 0%, $purple 80%);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 
 		word-wrap: break-word;
+
+		@include breakpoint(tablet){
+			font-size: rem-calc(70);
+		}
 
 		@include breakpoint(desktop){
 			font-size: rem-calc(90);
@@ -74,29 +76,44 @@ p {
 		flex: 0 0 100%;
 		font-weight: 700;
 		text-transform: uppercase;
-		letter-spacing: 8px;		
+		letter-spacing: 6px;		
 		color: $white;
 		margin: rem-calc(-40 0 10);
 	}	
+
+	@include breakpoint(tablet){
+		min-height: 80vh;
+		padding: $global-padding*2 $global-padding;
+	}
+
+	@include breakpoint(laptop){
+		padding: $global-padding*3 $global-padding;
+	}	
+
+	@include breakpoint(laptop){
+		padding: $global-padding*6 $global-padding;
+	}		
 }
 
 .intro {
 	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-
 	background: $primary;
 	padding: 0 $global-padding $global-padding*3;
-	text-align: center;
-
+	
 	h4, h5, p {
 		flex: 0 0 100%;
 		max-width: rem-calc(750);
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	@include breakpoint(tablet){
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		flex-wrap: wrap;		
 	}
 }
 
@@ -289,7 +306,7 @@ p {
 } 
 
 .page {
-	background: darken($primary, 10%);
+	background: darken($primary, 6%);
 	padding: $global-padding;
 	min-height: 100vh;
 
@@ -375,8 +392,8 @@ p {
 footer {
 	text-align: center;
 	padding: $global-padding;
-	background: $primary;
-	border-top: 1px solid rgba($primary-light, 0.5);
+	background: darken($primary, 4%);
+	border-top: 1px solid rgba($primary-light, 0.2);
 
 	p {
 		margin:0;
