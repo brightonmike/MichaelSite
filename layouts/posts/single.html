@@ -3,8 +3,10 @@
     <h4><a href="{{ .Site.BaseURL }}">Michael Gunner</a></h4>
 </header>
 <div class="wrap">
-	<labeL>Dark/Light</label>
-	<input type="checkbox" id="theme" name="theme">
+
+    <div class="colourscheme js-colour-switch">
+	   <input type="checkbox" id="theme" name="theme">
+    </div>
 
     <main class="page">
         <article class="page__article">
@@ -15,4 +17,17 @@
         </article>
     </main>
 </div>
+<script>
+    var element = document.querySelector('.page');
+    var toggle = document.querySelector('.js-colour-switch');
+    toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        element.classList.toggle('page--light');
+        if (toggle.checked = true) {
+            toggle.checked = false;
+        } else {
+            toggle.checked = true;
+        }
+    });
+</script>
 {{ partial "footer.html" . }}
