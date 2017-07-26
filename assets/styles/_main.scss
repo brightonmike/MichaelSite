@@ -136,6 +136,10 @@ p {
 	}
 }
 
+.articlegroup--work {
+	background: $primary;
+}
+
 .article {
 	padding: $global-padding;
 
@@ -183,6 +187,52 @@ p {
 			background: $secondary;
 		}
 	}
+}
+
+.article--work {
+	position: relative;
+	z-index: 5;
+
+	&::before {
+		content: '';
+		position: absolute;
+		height: rem-calc(35);
+		width: rem-calc(35);
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		background: linear-gradient(40deg, $red 0%, $purple 80%);
+	}
+
+	@include breakpoint(tablet){
+		flex: 0 0 30%;		
+
+		&::before {
+			height: 56%;
+			width: 55%;
+			right: 0;
+			left: auto;
+			bottom: 0;
+			top: auto;
+			transform: translateY(100%);
+			z-index: -1;
+			transition: all 0.2s ease-in-out;
+		}
+
+		&:hover::before {
+			background: linear-gradient(40deg, $red 0%, $purple 80%);
+			transition: all 0.4s ease-in-out;
+		}
+	}
+
+	.readmore {
+		border-color: $red;
+
+		&:hover {
+			border-color: $purple;
+		}
+	}
+
 }
 
 .meta {
@@ -239,7 +289,6 @@ p {
 			text-decoration: underline;
 		}
 		@include breakpoint(tablet){
-			text-align: center;
 			width: 100%;
 			max-width: rem-calc(1000);
 			margin: rem-calc(20) auto;		
@@ -249,7 +298,6 @@ p {
 
 }
 
-
 .wrap {
 	position: relative;
 	z-index: 77;
@@ -257,13 +305,22 @@ p {
 	color: $white;
 }
 
-.wrap label {
+.colourscheme {
+	max-width: rem-calc(1000);
+	margin: 0 auto;
+
+	@include breakpoint(desktop){
+		margin: 0 auto;
+	}	
+}
+
+.colourscheme label {
 	text-indent:-9999px;
 	color: transparent;
 	height:0;	
 }
 
-.wrap input[type=checkbox] {
+.colourscheme input[type=checkbox] {
 	appearance: none;
 	display: block;
 	position: relative;
@@ -271,6 +328,10 @@ p {
 	width: rem-calc(100);
 	height: rem-calc(20);
 	margin: 0 $global-padding;
+
+	@include breakpoint(laptop){
+		margin-left: 0;
+	}
 
 	&::after {
 		content: '';
@@ -283,11 +344,6 @@ p {
 		transition: 0.1s ease;
 	}
 
-
-	@include breakpoint(tablet){
-		max-width: rem-calc(1000);
-		margin: 0 auto;		
-	}	
 }
 
 .wrap input[type=checkbox]:checked {
@@ -295,15 +351,6 @@ p {
 		left: 50%;
 	}
 }
-
-.wrap input[type=checkbox]:checked + .page {
-	background: $white;
-	color: darken($primary, 10%);
-
-	h1, h2, h3, h4, h5, h6, p {
-		color: darken($primary, 10%);
-	}
-} 
 
 .page {
 	background: darken($primary, 6%);
@@ -329,6 +376,14 @@ p {
 	}
 }
 
+.page--light {
+	background: lighten($primary, 72%);
+	color: darken($primary, 10%);
+
+	h1, h2, h3, h4, h5, h6, p {
+		color: darken($primary, 10%);
+	}
+} 
 
 .page__article {
 	max-width: rem-calc(1000);
