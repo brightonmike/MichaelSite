@@ -205,7 +205,7 @@ p {
 	}
 
 	@include breakpoint(tablet){
-		flex: 0 0 30%;		
+		flex: 0 0 50%;		
 
 		&::before {
 			height: 56%;
@@ -223,6 +223,10 @@ p {
 			background: linear-gradient(40deg, $red 0%, $purple 80%);
 			transition: all 0.4s ease-in-out;
 		}
+	}
+
+	@include breakpoint(laptop){
+		flex: 0 0 30%;	
 	}
 
 	.readmore {
