@@ -390,6 +390,21 @@ p {
 	}
 
 	p {
+		a {
+			color: $secondary;
+
+			&:hover {
+				color: darken($secondary, 5%);
+			}
+
+			&:active {
+				color: darken($secondary, 8%);
+			}
+
+			&:visited {
+				color: darken($secondary, 8%);
+			}						
+		}
 		@include breakpoint(desktop){
 			line-height: 1.8;
 			margin-bottom: 1.5em;
