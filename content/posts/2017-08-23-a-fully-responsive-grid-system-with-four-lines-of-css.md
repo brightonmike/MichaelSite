@@ -12,14 +12,16 @@ Here's an example:
 
 As you'll see, there's just four declarations on the parent:
 
-```
-section {
-  display: grid;
-  grid-gap: $grid-gap/2;
-  grid-template-columns: repeat(auto-fill, minmax($column-min, $column-max));
-  grid-auto-rows: minmax($row-min, $row-max);
-}
-```
+
+<pre><codeclass="language-scss">
+    section {
+      display: grid;
+      grid-gap: $grid-gap/2;
+      grid-template-columns: repeat(auto-fill, minmax($column-min, $column-max));
+      grid-auto-rows: minmax($row-min, $row-max);
+    }
+</code></pre>
+
 
 And that's it - you have a fully responsive grid. If you drag the handles of the browser and resize, you'll see how the grid automatically flows.
 
@@ -27,4 +29,3 @@ If you'd like to learn CSS Grid (and I strongly advise you do) then check out th
 
 Grid by Example: https://gridbyexample.com/patterns/
 CSS Grid Garden: http://cssgridgarden.com/
-
