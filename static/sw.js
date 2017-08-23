@@ -1,22 +1,21 @@
 const CACHE_VERSION = 1;
 
 const BASE_CACHE_FILES = [
-    '/style.css',
-    '/script.js',
-    '/search.json',
+    '/styles.css',
+    '/bullets.min.js',
     '/manifest.json',
-    '/favicon.png',
+    '/images/icons/icon-96x96.png',
 ];
 
 const OFFLINE_CACHE_FILES = [
-    '/style.css',
-    '/script.js',
+    '/styles.css',
+    '/bullets.min.js',
     '/offline/index.html',
 ];
 
 const NOT_FOUND_CACHE_FILES = [
-    '/style.css',
-    '/script.js',
+    '/styles.css',
+    '/bullets.min.js',
     '/404.html',
 ];
 
