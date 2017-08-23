@@ -51,7 +51,7 @@ gulp.task('images', function () {
 
 gulp.task('bullets-js', function() {
   return gulp.src([
-    './assets/scripts/*.js',
+    './assets/js/*.js',
   ])
 	.pipe(babel({
 		presets: ['es2015'],
@@ -72,7 +72,7 @@ gulp.task('browsersync', function() {
     // Watch files
     var files = [
     	'./assets/styles/*.css',
-    	'./assets/scripts/*.js',
+    	'./assets/js/*.js',
     	'**/*.php',
     	'assets/img/**/*.{png,jpg,gif,svg,webp}',
     ];
@@ -83,7 +83,7 @@ gulp.task('browsersync', function() {
     });
 
     gulp.watch('./assets/styles/**/*.scss', ['styles']);
-    gulp.watch('./assets/scripts/*.js', ['bullets-js']).on('change', browserSync.reload);
+    gulp.watch('./assets/js/*.js', ['bullets-js']).on('change', browserSync.reload);
 
 });
 
@@ -94,7 +94,7 @@ gulp.task('watch', function() {
   gulp.watch('./assets/styles/**/*.scss', ['styles']);
 
   // Watch bullets-js files
-  gulp.watch('./assets/scripts/*.js', ['bullets-js']);
+  gulp.watch('./assets/js/*.js', ['bullets-js']);
 
   gulp.watch('./assets/images/*', ['images']);
 
