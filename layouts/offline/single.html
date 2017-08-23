@@ -1,0 +1,13 @@
+{{ partial "header.html" . }}
+<header class="pageheader">
+    <h4><a href="{{ .Site.BaseURL }}">Michael Gunner</a></h4>
+</header>
+<div class="wrap">
+    <main class="page">
+        <article class="page__article">        
+            <h1>{{ .Title }}</h1>
+            {{ .Content }}
+        </article>
+    </main>
+</div>
+{{ partial "footer.html" . }}
