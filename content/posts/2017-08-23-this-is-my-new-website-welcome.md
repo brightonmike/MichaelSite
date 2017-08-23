@@ -9,13 +9,13 @@ Over the past few weeks I’ve been dipping in and out of working on a simple ne
 
 I've only used them a little bit for some font-sizing, but it works as follows:
 
-<pre><code>:root {
+<pre><code class="language-scss">:root {
 --body-font-size: 16px;
 }</code></pre>
 
 I can then use the variables in my CSS like so:
 
-<pre><code>p {
+<pre><code class="language-scss">p {
 	font-size: var(--body-font-size);
 }</code></pre>
 
@@ -29,7 +29,7 @@ This site uses a basic service worker. I confess I didn't write the code for thi
 
 We all need smooth scroll sometimes, especially for jump links. Normally we do this using JavaScript which can be a chore on performance. Sadly though, this only works on Firefox. However, it can be enabled in Chrome under experimental web features, so the future for this property looks good.
 
-<pre><code>body {
+<pre><code class="language-scss">body {
 	scroll-behavior: smooth;
 }</code></pre>
 
