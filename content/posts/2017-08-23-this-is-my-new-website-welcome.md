@@ -5,7 +5,8 @@ image: null
 ---
 Over the past few weeks I’ve been dipping in and out of working on a simple new personal site, and this is it. I hope you like it. During the process, I experimented with some new ideas and technologies, here’s a brief run through.
 
-# CSS Variables
+CSS Variables
+-------------
 
 I've only used them a little bit for some font-sizing, but it works as follows:
 
@@ -21,11 +22,13 @@ I can then use the variables in my CSS like so:
 
 For variables that I want to be able to easily re-define such as font-sizes, CSS variables seem really helpful. Sass variables are immutable, whereas CSS variables are not. I think that really, both still have an important role and there doesn't need to be a discussion on using one or the other - they're not mutually exclusive.
 
-# Service Worker
+Service Worker
+-------------
 
 This site uses a basic service worker. I confess I didn't write the code for this one, but when I have more time, I'm going to delve into it and get a clearer idea of the nuts and bolts. For now, it dishes up a nice "offline" page and helps the site perform better, especially across flaky connections.
 
-# CSS Scroll Behaviour
+CSS Scroll Behaviour
+-------------
 
 We all need smooth scroll sometimes, especially for jump links. Normally we do this using JavaScript which can be a chore on performance. Sadly though, this only works on Firefox. However, it can be enabled in Chrome under experimental web features, so the future for this property looks good.
 
@@ -33,7 +36,8 @@ We all need smooth scroll sometimes, especially for jump links. Normally we do t
 	scroll-behavior: smooth;
 }</code></pre>
 
-# CSS Grid
+CSS Grid
+-------------
 
 And lastly, CSS Grid! I've used CSS Grid to layout some of the home page. It's been a great learning exercise and thus far I'm enjoying using it. That said, it takes some getting used to, and how it behaves with variable content can take a bit of getting your head around. Check out [this](https://michaelgunner.co.uk/posts/2017-08-23-a-fully-responsive-grid-system-with-four-lines-of-css/) blog post for an example.
 
