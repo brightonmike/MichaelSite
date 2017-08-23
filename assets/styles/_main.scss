@@ -194,30 +194,18 @@ p {
 	z-index: 5;
 
 	&::before {
-		content: '';
-		position: absolute;
-		height: rem-calc(35);
-		width: rem-calc(35);
-		right: 0;
-		bottom: 0;
-		z-index: -1;
 		background: linear-gradient(40deg, $red 0%, $purple 80%);
 	}
 
 	@include breakpoint(tablet){
 		flex: 0 0 50%;		
 
-		&::before {
-			height: 56%;
-			width: 55%;
-			right: 0;
-			left: auto;
-			bottom: 0;
-			top: auto;
-			transform: translateY(100%);
-			z-index: -1;
-			transition: all 0.2s ease-in-out;
-		}
+		// &::before {
+		// 	bottom: auto;
+		// 	top: 0;
+		// 	transform: translateY(100%);
+		// 	transition: all 0.2s ease-in-out;
+		// }
 
 		&:hover::before {
 			background: linear-gradient(40deg, $red 0%, $purple 80%);
@@ -419,6 +407,16 @@ p {
 		color: $secondary;
 		background: $primary;
 	}
+
+	&:active {
+		color: $secondary;
+		background: darken($primary, 10%);		
+	}
+
+	&:focus {
+		outline: none;
+		color: $secondary;
+	}
 }
 
 .button--secondary {
@@ -429,6 +427,17 @@ p {
 		color: $primary;
 		background: $secondary;
 	}
+
+	&:active {
+		color: $primary;
+		background: darken($secondary, 10%);		
+	}
+
+	&:focus {
+		outline: none;
+		background: darken($secondary, 15%);	
+		color: $primary;
+	}	
 }
 
 .button--small {
