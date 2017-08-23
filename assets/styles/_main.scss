@@ -138,6 +138,10 @@ p {
     	grid-template-columns: minmax($column-min, 50%) minmax($column-min, 50%);
     }
 
+    @include breakpoint(desktop){
+    	grid-template-columns: minmax($column-min, 33.34%) minmax($column-min, 33.34%) minmax($column-min, 33.34%);
+    }
+
     h6 {		
     	@include breakpoint(laptop){
 			grid-column-start: span 2;
