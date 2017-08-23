@@ -146,6 +146,10 @@ p {
     	@include breakpoint(laptop){
 			grid-column-start: span 2;
 		}
+		
+    	@include breakpoint(desktop){
+			grid-column-start: span 3;
+		}		
 	}
 
 }
