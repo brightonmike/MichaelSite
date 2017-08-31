@@ -1,5 +1,5 @@
 ---
-title: Lessons learned from a first pattern library
+title: Lessons learned from a pattern library
 date: 2017-07-24T21:04:43.961Z
 image: null
 ---
@@ -11,7 +11,7 @@ I’ve been a front-end developer now for several years. Over that time, I’ve 
 
 This year, I had the opportunity to branch into another discipline — pattern libraries. Unlike WordPress and static sites, pattern libraries are instead a collection of styled front-end components, then used to assemble various apps, websites, landing pages and more. Imagine if you took a website, and broke it down into header, footer, menu, logo, etc — this is effectively a pattern library. It acts as a reference point for developers, but also as a single source of truth. The library becomes the definition for how a companies brand should be used online.
 
-To make my challenge even greater, I’d then be applying the libraries components to an existing Angular front-end that hooks onto a PHP API. Although I’ve worked on Angular projects before, it was a while ago, and with nearly 200 template files alone, this was on a whole new level. I’m not one to pass up the challenge however, and I also identified the business opportunity for the agency I work for in diversifying, so we took it on. I knew full well there was going to be a steep learning curve.
+To make my challenge even greater, for a later project, I’d then be applying the libraries components to an existing Angular front-end that hooks onto a PHP API. Although I’ve worked on Angular projects before, it was a while ago, and with nearly 200 template files alone, this was on a whole new level. I’m not one to pass up the challenge however, and I also identified the business opportunity for the agency I work for in diversifying, so we took it on. I knew full well there was going to be a steep learning curve.
 
 The first challenge was picking a tool to create the library. In this respect, pickings are pretty slim, and the tools we do have are in relatively early stages of development. Pattern Libraries are an emerging trend, partly thanks to the excellent efforts of advocates such as Brad Frost. Brad himself has helped create a tool called Pattern Lab which can be used to create design systems. Unfortunately, I wasn’t able to get my head around it in a way that I felt confident enough to use it.
 
@@ -37,5 +37,5 @@ Pattern libraries also require you to have a keen eye for design. Skills need to
 
 But most importantly of all, I learned to accept that I would make many mistakes and I would make decisions that, later on, would reflect poorly. I found this to be the inherent nature of creating a design system in code, it requires you to go back and forth, iterating almost endlessly. No matter how thorough you have been, and how sure you are that you have finished a pattern and it works perfectly, you can be sure that at some point it will need to be tweaked, amended, bug fixed. Pattern Libraries are, essentially then, living design systems and we shouldn’t fear the need to revise and change. Indeed, as I write this, I believe the build I created is being extended and tweaked by the team of developers now utilising it.
 
-Ultimately though, I’m happy with the final result and I believe that the developers using it are enjoying both working with the library as well as extending it as they see fit, with new patterns and amends that fit into the systems they use. Considering this was my first real pattern library project, I feel I coped pretty well with the challenges laid out in front of me. Lessons have been learned, some of them were quite steep, but all of them will be taken into the next project.
+Ultimately though, I’m happy with the final result and I believe that the developers using it are enjoying both working with the library as well as extending it as they see fit, with new patterns and amends that fit into the systems they use. Considering this was one of my earliest pattern library projects, I feel I coped pretty well with the challenges laid out in front of me. Lessons have been learned, some of them were quite steep, but all of them will be taken into the next project.
 
