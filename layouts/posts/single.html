@@ -20,13 +20,14 @@
 <script>
     var element = document.querySelector('.page');
     var toggle = document.querySelector('.js-colour-switch');
+    var checkbox = document.querySelector('#theme');
     toggle.addEventListener('click', function(e) {
         e.preventDefault();
         element.classList.toggle('page--light');
-        if (toggle.checked = true) {
-            toggle.checked = false;
+        if (checkbox.checked = true) {
+            checkbox.checked = false;
         } else {
-            toggle.checked = true;
+            checkbox.checked = true;
         }
     });
 </script>
