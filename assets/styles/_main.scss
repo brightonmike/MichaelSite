@@ -410,6 +410,7 @@ p, .page__article ul li {
 	}
 
 	p, ul li {
+		word-wrap: break-word;
 		a {
 			color: $secondary;
 
