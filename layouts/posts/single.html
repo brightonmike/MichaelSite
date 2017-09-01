@@ -24,9 +24,12 @@
     toggle.addEventListener('click', function(e) {
         e.preventDefault();
         element.classList.toggle('page--light');
+	    console.log(checkbox);
         if (checkbox.checked === true) {
+		console.log('checkbox false');
             checkbox.checked = false;
         } else {
+		console.log('checkbox true');
             checkbox.checked = true;
         }
     });
