@@ -7,7 +7,7 @@ Impossible! Hacky! Nope, neither of these things. With the emergence of CSS Grid
 
 Here's an example:
 
-<iframe height='265' scrolling='no' title='YxvZZP' src='//codepen.io/brightonmike/embed/preview/YxvZZP/?height=265&theme-id=dark&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/brightonmike/pen/YxvZZP/'>YxvZZP</a> by brightonmike (<a href='https://codepen.io/brightonmike'>@brightonmike</a>) on <a href='https://codepen.io'>CodePen</a>.
+<iframe height='265' scrolling='no' title='YxvZZP' src='//codepen.io/brightonmike/embed/preview/YxvZZP/?height=265&theme-id=31142&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/brightonmike/pen/YxvZZP/'>YxvZZP</a> by brightonmike (<a href='https://codepen.io/brightonmike'>@brightonmike</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 As you'll see, there's just four declarations on the parent:
