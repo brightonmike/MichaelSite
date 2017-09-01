@@ -392,7 +392,7 @@ p, .page__article ul li {
 	background: lighten($primary, 72%);
 	color: darken($primary, 10%);
 
-	h1, h2, h3, h4, h5, h6, p {
+	h1, h2, h3, h4, h5, h6, p, .page__article ul li {
 		color: darken($primary, 10%);
 	}
 } 
@@ -407,6 +407,10 @@ p, .page__article ul li {
 
 	h1, h2, h3, h4, h5, h6 {
 		margin-bottom: 1em;
+	}
+	
+	ul li {
+		color: $text-color;
 	}
 
 	p, ul li {
