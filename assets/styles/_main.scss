@@ -370,6 +370,22 @@ p, .page__article ul li {
 			font-size: rem-calc(45);
 		}		
 	}
+	
+	h3 {
+		font-size: rem-calc(26);
+
+		@include breakpoint(tablet){
+			font-size: rem-calc(30);
+		}
+
+		@include breakpoint(laptop){
+			font-size: rem-calc(32);
+		}
+
+		@include breakpoint(desktop){
+			font-size: rem-calc(34);
+		}		
+	}	
 }
 
 .page--light {
