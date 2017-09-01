@@ -19,7 +19,7 @@ h6 {
 	letter-spacing: 10px;	
 }
 
-p {
+p, .page__article ul li {
 	font-size: var(--body-font-size);
 	margin-bottom: 1em;
 }
@@ -393,7 +393,7 @@ p {
 		margin-bottom: 1em;
 	}
 
-	p {
+	p, ul li {
 		a {
 			color: $secondary;
 
