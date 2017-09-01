@@ -25,7 +25,7 @@ It's this ability to improve the offline experience that we're utilising on our 
 
 This is your first step, and it involves popping the snippet below within your site's footer, inside script tags.
 
-<iframe style="width: 100%;" title="Register service worker" src="//codepen.io/brightonmike/embed/QMzzyz/?height=265&amp;theme-id=default&amp;default-tab=js&amp;embed-version=2" width="300" height="265" frameborder="no" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
+<iframe style="width: 100%;" title="Register service worker" src="//codepen.io/brightonmike/embed/QMzzyz/?height=265&amp;theme-id=31142&amp;default-tab=js&amp;embed-version=2" width="300" height="265" frameborder="no" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
 
 Once you've done so, reload the page and head on over to <code>chrome://inspect/#service-workers</code> in Google Chrome. You should see your service worker show up as registered.
 
@@ -33,15 +33,15 @@ Once you've done so, reload the page and head on over to <code>chrome://inspect/
 
 The first thing you want to kick-off within your service worker is an <code>install</code> event. For caching, it's within this event where we want to open the cache, insert our files, and then check if we have cached the required assets. The install event itself looks as follows:
 
-<iframe style="width: 100%;" title="Install service worker" src="//codepen.io/brightonmike/embed/Xaoopm/?height=133&amp;theme-id=default&amp;default-tab=js&amp;embed-version=2" width="300" height="133" frameborder="no" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
+<iframe style="width: 100%;" title="Install service worker" src="//codepen.io/brightonmike/embed/Xaoopm/?height=133&amp;theme-id=31142&amp;default-tab=js&amp;embed-version=2" width="300" height="133" frameborder="no" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
 
 You may want to define your required assets within an object:
 
-<iframe style="width: 100%;" title="Install service worker" src="//codepen.io/brightonmike/embed/YxddVr/?height=133&amp;theme-id=default&amp;default-tab=js&amp;embed-version=2" width="300" height="133" frameborder="no" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
+<iframe style="width: 100%;" title="Install service worker" src="//codepen.io/brightonmike/embed/YxddVr/?height=133&amp;theme-id=31142&amp;default-tab=js&amp;embed-version=2" width="300" height="133" frameborder="no" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
 
 For a recent project, we started off with a Google service worker and we adapted the install event as follows:
 
-<iframe style="width: 100%;" title="Install service worker" src="//codepen.io/brightonmike/embed/qXLLPr/?height=350&amp;theme-id=default&amp;default-tab=js&amp;embed-version=2" width="300" height="350" frameborder="no" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
+<iframe style="width: 100%;" title="Install service worker" src="//codepen.io/brightonmike/embed/qXLLPr/?height=350&amp;theme-id=31142&amp;default-tab=js&amp;embed-version=2" width="300" height="350" frameborder="no" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
 
 This script in effect grabs an offline page (created in the CMS), caches this, and then caches the fundamental assets required for this page to work.
 
@@ -49,7 +49,7 @@ This script in effect grabs an offline page (created in the CMS), caches this, a
 
 Now we want our <code>fetch</code> event. The fetch event is where we're returning our requests. In a nutshell, the service worker is checking the cache when a request is made. If the asset is identified in the cache, the cached copy is loaded. Otherwise, the service worker passes up the request to the network.
 
-<iframe style="width: 100%;" title="Install service worker" src="//codepen.io/brightonmike/embed/xLmmYg/?height=350&amp;theme-id=default&amp;default-tab=js&amp;embed-version=2" width="300" height="350" frameborder="no" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
+<iframe style="width: 100%;" title="Install service worker" src="//codepen.io/brightonmike/embed/xLmmYg/?height=350&amp;theme-id=31142&amp;default-tab=js&amp;embed-version=2" width="300" height="350" frameborder="no" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
 
 In this example, there's a couple of checks going on. First of all, we only want to call <code>respondWith()</code> if the request is a "navigate" request. This request mode is not widely supported yet, so we double check by checking the request is a <code>GET</code> request. We're then using <code>fetch()</code> to throw a catch callback exception in the event that the server is unreachable (in other words, we're offline). It's at this point we want to check our cache to and dish up our offline experience.
 
@@ -57,7 +57,7 @@ In this example, there's a couple of checks going on. First of all, we only want
 
 Despite using the name activate, what we're really doing here us <em>updating</em> our service worker cache.
 
-<iframe style="width: 100%;" title="Install service worker" src="//codepen.io/brightonmike/embed/KvbbxK/?height=350&amp;theme-id=default&amp;default-tab=js&amp;embed-version=2" width="300" height="350" frameborder="no" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
+<iframe style="width: 100%;" title="Install service worker" src="//codepen.io/brightonmike/embed/KvbbxK/?height=350&amp;theme-id=31142&amp;default-tab=js&amp;embed-version=2" width="300" height="350" frameborder="no" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
 
 We're firstly checking our pre-defined cache object to delete anything that doesn't match. We're then looping to delete whole caches that also do not match what we've defined earlier on. We can do this by affixing a version number to our object name for the cached assets like so <code>const CACHE_VERSION = 2;</code>.
 
