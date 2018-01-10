@@ -1,27 +1,29 @@
 {{ partial "header.html" . }}
 <header class="pageheader">
-    <h4><a href="{{ .Site.BaseURL }}">Michael Gunner</a></h4>
+    <h2><a href="{{ .Site.BaseURL }}">Michael Gunner</a></h2>
+    <h4>front-end developer</h4>
 </header>
-<div class="wrap">
-
-    <div class="colourscheme js-colour-switch">
-	   <input type="checkbox" id="theme" name="theme">
-    </div>
 
     <main class="page">
+
+        <label class="colourscheme js-colour-switch">            
+           Switch background:
+           <input type="checkbox" id="theme" name="theme">
+        </label>
+
         <article class="page__article">
             <header>
-		<h3 class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</h3>
-            	<h1>{{ .Title }}</h1>
-		    {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }}
-	    </header>
-		
+                <h3 class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</h3>
+                <h1>{{ .Title }}</h1>
+                {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }}
+            </header>
+
             <div class="article__content">
-            	{{ .Content }}
-	    </div>
+                {{ .Content }}
+            </div>
         </article>
     </main>
-</div>
+
 <script>
     var element = document.querySelector('.page');
     var toggle = document.querySelector('.js-colour-switch');

@@ -79,7 +79,7 @@ gulp.task('browsersync', function() {
 
     browserSync.init(files, {
 	    // Replace with URL of your local site
-	    proxy: "http://localhost/",
+	    proxy: "http://localhost:1313/",
     });
 
     gulp.watch('./assets/styles/**/*.scss', ['styles']);
