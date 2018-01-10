@@ -352,8 +352,7 @@ p, .page__article ul li {
 	background: darken($primary, 6%);
 	padding: $global-padding;
 	min-height: 100vh;
-
-
+	
 	h1 {
 		color: $secondary;
 		font-size: rem-calc(32);
@@ -370,7 +369,9 @@ p, .page__article ul li {
 			font-size: rem-calc(45);
 		}		
 	}
-	
+}
+
+.article__content {
 	h3 {
 		font-size: rem-calc(26);
 
