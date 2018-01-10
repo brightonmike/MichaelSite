@@ -316,6 +316,7 @@ p, .page__article ul li {
 }
 
 .colourscheme {
+	display: inline-block;
 	max-width: rem-calc(1000);
 	margin: 0 auto;
 	font-size: rem-calc(14);
