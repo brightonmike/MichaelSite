@@ -25,20 +25,20 @@
     </main>
 
 <script>
-    var element = document.querySelector('.page');
-    var toggle = document.querySelector('.js-colour-switch');
-    var checkbox = document.getElementById('theme');
-    toggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        element.classList.toggle('page--light');
-	    console.log(checkbox);
-        if (checkbox.checked === true) {
-		console.log('checkbox false');
-            checkbox.checked = false;
-        } else {
-		console.log('checkbox true');
-            checkbox.checked = true;
-        }
-    });
+const element = document.querySelector('.page');
+const toggle = document.querySelector('.js-colour-switch');
+const checkbox = document.querySelector('.js-colour-switch input');
+
+toggle.addEventListener('click', function(e) {
+  
+  if (checkbox.checked === false) {
+    element.classList.remove('page--light');
+  }
+  
+  if (checkbox.checked === true) {    
+    element.classList.add('page--light');
+  }  
+  
+});
 </script>
 {{ partial "footer.html" . }}
