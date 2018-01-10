@@ -10,10 +10,15 @@
 
     <main class="page">
         <article class="page__article">
-            <h3 class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</h3>
-            <h1>{{ .Title }}</h1>
-            {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }}
-            {{ .Content }}
+            <header>
+		<h3 class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</h3>
+            	<h1>{{ .Title }}</h1>
+		    {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }}
+	    </header>
+		
+            <div class="article__content">
+            	{{ .Content }}
+	    </div>
         </article>
     </main>
 </div>
