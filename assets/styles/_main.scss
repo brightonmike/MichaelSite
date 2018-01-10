@@ -256,39 +256,53 @@ p, .page__article ul li {
 	background: $primary;
 	position: relative;
 	z-index: 6;
-	padding: rem-calc(12) $global-padding 0;
-	display: flex;
-	align-items: center;
+	padding: $global-padding;
 
-
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 105vh;
-		background: rgba($primary, 0.8);
-		z-index: 2;
+	h2, h4 {
+		margin: 0;
 	}
 
-	h4, a {
+	h2, a {
 		position: relative;
 		z-index: 3;
 		color: $white;
 		text-decoration: none;
 	}
 
-	h4 {
+	h2 {
 		a:hover {
 			color: $secondary;
 			text-decoration: underline;
 		}
-		@include breakpoint(tablet){
-			width: 100%;
-			max-width: rem-calc(1000);
-			margin: rem-calc(20) auto;		
+	}
+
+	h4 {
+		font-weight: 900;
+		font-style: italic;
+		font-size: rem-calc(14);
+		text-transform: uppercase;
+		letter-spacing: 7px;
+
+		background: linear-gradient(20deg, $red 0%, $purple 80%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		@include breakpoint(laptop){
+			font-size: rem-calc(18);
+			letter-spacing: 9px;
 		}
+
+		@include breakpoint(desktop){
+			font-size: rem-calc(22);
+			letter-spacing: 11px;
+		}
+	}
+
+	@include breakpoint(tablet){
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: $global-padding $global-padding*2;
 	}
 
 
@@ -304,16 +318,11 @@ p, .page__article ul li {
 .colourscheme {
 	max-width: rem-calc(1000);
 	margin: 0 auto;
+	font-size: rem-calc(14);
 
 	@include breakpoint(desktop){
 		margin: 0 auto;
 	}	
-}
-
-.colourscheme label {
-	text-indent:-9999px;
-	color: transparent;
-	height:0;	
 }
 
 .colourscheme input[type=checkbox] {
@@ -323,7 +332,18 @@ p, .page__article ul li {
 	background: $white;
 	width: rem-calc(100);
 	height: rem-calc(20);
-	margin: 0 $global-padding;
+	margin: $global-padding/2 $global-padding 0 0;
+	box-shadow: 0px 0px 0px 1px $medium-gray;
+	border-radius: 8px;
+
+	&:hover {
+		box-shadow: 0px 0px 0px 1px $secondary;
+	}
+
+	&:focus {
+		outline: none;
+		box-shadow: 0px 0px 0px 2px $secondary;
+	}
 
 	@include breakpoint(laptop){
 		margin-left: 0;
@@ -338,6 +358,7 @@ p, .page__article ul li {
 		left: rem-calc(0);
 		background: $secondary;
 		transition: 0.1s ease;
+		border-radius: 8px;
 	}
 
 }
@@ -353,6 +374,10 @@ p, .page__article ul li {
 	padding: $global-padding;
 	min-height: 100vh;
 	
+	@include breakpoint(tablet){
+		padding: $global-padding $global-padding*2;
+	}
+
 	h1 {
 		color: $secondary;
 		font-size: rem-calc(32);

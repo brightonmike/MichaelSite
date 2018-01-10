@@ -1,6 +1,19 @@
 @import "../../node_modules/bullets-sass/scss/mixins";
 // Global
-$global-font-family:'Lora', serif;
+$global-font-family:
+'Lora',
+    // Safari for OS X and iOS (San Francisco)
+    -apple-system,
+    // Chrome >= 56 for OS X (San Francisco), Windows, Linux and Android
+    system-ui,
+    // Chrome < 56 for OS X (San Francisco)
+    BlinkMacSystemFont,
+    // Windows
+    "Segoe UI",
+    // Android
+    "Roboto",
+    // Basic web fallback
+    "Helvetica Neue", Arial, sans-serif !default;
 $global-font-size:16px;
 $global-line-height:1.2;
 $global-font-weight:300;
@@ -85,11 +98,13 @@ $h6-font-sizes: (
 );
 
 $header-font-family:'Movement', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-$header-line-height:1.2;
+$header-line-height: 1.2;
 $header-bottom-margin: 0.65em;
 
 $paragraph-line-height:1.6;
 $paragraph-margin-bottom:1.2rem;
+
+$hr-border: 1px solid $light-gray;
 
 $list-lineheight: $paragraph-line-height;
 $list-margin-bottom: $paragraph-margin-bottom;
@@ -138,12 +153,6 @@ $table-footer-background: #eeeeee;
 $table-footer-padding: rem-calc(10 12 10 12);
 $table-footer-weight: $global-weight-normal;
 
-// Grid
-$desktopbreak:rem-calc(1280);
-$laptopbreak:rem-calc(1024);
-$tabletbreak:rem-calc(768);
-$phabletbreak:rem-calc(460);
-$mobilebreak:rem-calc(320);
 
 // CSS Grid
 $column-min: 200px;
@@ -152,17 +161,24 @@ $row-min: 0px;
 $row-max: auto;
 $grid-gap: $global-padding;
 
+// Grid
+$desktopbreak:rem-calc(1280);
+$laptopbreak:rem-calc(1024);
+$tabletbreak:rem-calc(768);
+$phabletbreak:rem-calc(460);
+$mobilebreak:rem-calc(320);
+
 // map the breakpoints
 $breakpoints: (
-    mobile-min: $mobilebreak,
-    phablet-min: $phabletbreak,
-    tablet-min: $tabletbreak,
-    laptop-min: $laptopbreak,
-    desktop-min: $desktopbreak,
-    mobile-max: $phabletbreak - 1,
-    phablet-max: $tabletbreak - 1,
-    tablet-max: $laptopbreak - 1,
-    laptop-max: $desktopbreak - 1,
+  mobile-min: $mobilebreak,
+  phablet-min: $phabletbreak,
+  tablet-min: $tabletbreak,
+  laptop-min: $laptopbreak,
+  desktop-min: $desktopbreak,
+  mobile-max: $phabletbreak - 1,
+  phablet-max: $tabletbreak - 1,
+  tablet-max: $laptopbreak - 1,
+  laptop-max: $desktopbreak - 1,
 );
 
 $grid-break-point-tablet:$tabletbreak;
