@@ -24,21 +24,4 @@
         </article>
     </main>
 
-<script>
-const element = document.querySelector('.page');
-const toggle = document.querySelector('.js-colour-switch');
-const checkbox = document.querySelector('.js-colour-switch input');
-
-toggle.addEventListener('click', function(e) {
-  
-  if (checkbox.checked === false) {
-    element.classList.remove('page--light');
-  }
-  
-  if (checkbox.checked === true) {    
-    element.classList.add('page--light');
-  }  
-  
-});
-</script>
 {{ partial "footer.html" . }}
