@@ -25,14 +25,17 @@ p, .page__article ul li {
 }
 
 .home {
-	background: url('../images/bg2-mobile.jpg'), $primary;
-	background-size: 100%;
+	background: url('../images/bg4-mobile.jpg'), $primary;
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 
+	@include breakpoint(tablet){
+		background: url('../images/bg4-tablet.jpg'), $primary;
+	}
+
 	@include breakpoint(desktop){
-		background: url('../images/bg2.jpg'), $primary;
-		background-size: 100%;
+		background: url('../images/bg4.jpg'), $primary;
 	}
 }
 
@@ -43,7 +46,8 @@ p, .page__article ul li {
 	flex-wrap: wrap;
 
 	width: 100%;
-	padding: $global-padding*3 $global-padding;
+	min-height: 100vh;
+	padding: $global-padding*3 $global-padding/2;
 	
 	background:  linear-gradient(0deg, $primary 0%, rgba($primary, 0.7) 100%);
 	color: $white;
@@ -56,10 +60,12 @@ p, .page__article ul li {
 
 	h3 {
 		flex: 0 0 100%;
+		font-size: rem-calc(30);
 		font-weight: 900;
 		font-style: italic;
 		text-transform: uppercase;
-		letter-spacing: 16px;
+		letter-spacing: rem-calc(12);
+		line-height: 1.1;
 
 		background: linear-gradient(20deg, $red 0%, $purple 80%);
 		-webkit-background-clip: text;
@@ -83,7 +89,7 @@ p, .page__article ul li {
 		text-transform: uppercase;
 		letter-spacing: 6px;		
 		color: $white;
-		margin: rem-calc(-40 0 10);
+		margin: rem-calc(0 0 10);
 	}	
 
 	@include breakpoint(tablet){
@@ -94,25 +100,36 @@ p, .page__article ul li {
 }
 
 .intro {
-	position: relative;
-	background: $primary;
-	padding: 0 $global-padding $global-padding*3;
-	
+	margin-top: rem-calc(30);	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-wrap: wrap;
+
 	h4, h5, p {
 		flex: 0 0 100%;
-		max-width: rem-calc(750);
+		max-width: rem-calc(450);
 		margin-left: auto;
 		margin-right: auto;
+		text-align: center;
+
+		@include breakpoint(laptop){
+			max-width: rem-calc(750);
+		}
 	}
 
-	@include breakpoint(tablet){
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		flex-wrap: wrap;		
+
+	@include breakpoint(laptop){
+		margin-top: rem-calc(50);
 	}
+
+	@include breakpoint(desktop){
+		margin-top: rem-calc(70);
+	}
+
+
 }
 
 .articlegroup {
@@ -121,6 +138,7 @@ p, .page__article ul li {
 
 	h6 {
 		padding: 0 $global-padding;
+		text-align: center;
 
 		@include breakpoint(tablet){
 			padding: $global-padding $global-padding*2;
@@ -158,6 +176,10 @@ p, .page__article ul li {
 	background: $primary;
 }
 
+.article__inner {
+	text-align: center;
+}
+
 .article {
 	padding: $global-padding;
 
@@ -174,6 +196,7 @@ p, .page__article ul li {
 	}
 
 	p {
+		word-wrap: break-word;
 		line-height: 1.5;
 	}
 
@@ -184,7 +207,6 @@ p, .page__article ul li {
 	@include breakpoint(tablet){
 		position: relative;
 		overflow: hidden;
-		margin: rem-calc(40 0);
 		padding: $global-padding $global-padding*2;
 
 		&::before {
@@ -233,7 +255,8 @@ p, .page__article ul li {
 
 .meta {
 	display: inline-block;
-	font-size: rem-calc(18);
+	margin: 0;
+	font-size: rem-calc(14);
 	background: linear-gradient(40deg, $red 0%, $purple 80%);
 	background-size: rem-calc(200);
 	-webkit-background-clip: text;
@@ -280,8 +303,10 @@ p, .page__article ul li {
 		font-weight: 900;
 		font-style: italic;
 		font-size: rem-calc(14);
+		line-height: 1;
+		margin: rem-calc(14 0 0);
 		text-transform: uppercase;
-		letter-spacing: 7px;
+		letter-spacing: 4px;
 
 		background: linear-gradient(20deg, $red 0%, $purple 80%);
 		-webkit-background-clip: text;
@@ -434,6 +459,7 @@ p, .page__article ul li {
 
 	h1, h2, h3, h4, h5, h6 {
 		margin-bottom: 1em;
+		line-height: 1.1;
 	}
 	
 	ul li {
@@ -539,8 +565,8 @@ p, .page__article ul li {
 }
 
 .readmore {
+	font-family: $header-font-family;
 	font-weight: 900;
-	letter-spacing: 1px;
 	color: $white;
 	border-bottom: 1px dashed $secondary;
 	padding: rem-calc(0 0 4 0);
