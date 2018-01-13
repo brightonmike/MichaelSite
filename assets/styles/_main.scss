@@ -31,11 +31,11 @@ p, .page__article ul li {
 	background-attachment: scroll;
 
 	@include breakpoint(tablet){
-		background: url('../images/bg4-tablet.jpg'), $primary;
+		background-image: url('../images/bg4-tablet.jpg');
 	}
 
 	@include breakpoint(desktop){
-		background: url('../images/bg4.jpg'), $primary;
+		background-image: url('../images/bg4.jpg');
 	}
 }
 
@@ -93,7 +93,6 @@ p, .page__article ul li {
 	}	
 
 	@include breakpoint(tablet){
-		min-height: 80vh;
 		padding: $global-padding*2 $global-padding;
 	}
 		
@@ -177,11 +176,25 @@ p, .page__article ul li {
 }
 
 .article__inner {
+	display: block;
 	text-align: center;
+	height: 100%;
+	padding: $global-padding;
+
+	&:focus {
+		box-shadow: inset 0px 0px 1px 0px $secondary;
+	}
+
+	@include breakpoint(tablet){
+		padding: $global-padding $global-padding*2;
+	}
 }
 
 .article {
-	padding: $global-padding;
+	h2, p, a {
+		position: relative;
+		z-index: 3;
+	}
 
 	h2, h2 a {
 		color: $secondary;
@@ -207,23 +220,39 @@ p, .page__article ul li {
 	@include breakpoint(tablet){
 		position: relative;
 		overflow: hidden;
-		padding: $global-padding $global-padding*2;
+    
+		&::before, &::after {
+			content: '';
+			width: 100%;
+			height: rem-calc(2);
+
+			position: absolute;
+			z-index: 2;
+			top: 50%;
+
+			transform-origin: 50% 0;
+			transform: rotate(0deg);
+			transition: all 0.3s ease-in-out;
+
+			background: rgba($primary, 0);
+		}
 
 		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: $global-padding*2;
-			right: $global-padding*2;
-			height: rem-calc(3);
-			background: $primary;
-			transform: translateY(rem-calc(-3));
-			transition: all 0.2s ease-in-out;
+			left: 0;
+		}
+
+		&::after {
+			right: 0;
 		}
 
 		&:hover::before {
-			transform: translateY(0);
-			background: $secondary;
+			transform: rotate(45deg);
+			background: $primary;
+		}
+
+		&:hover::after {
+			transform: rotate(-45deg);
+			background: $primary;
 		}
 	}
 }
@@ -232,14 +261,13 @@ p, .page__article ul li {
 	position: relative;
 	z-index: 5;
 
-	&::before {
-		background: linear-gradient(40deg, $red 0%, $purple 80%);
+	&::before, &::after {
+
 	}
 
 	@include breakpoint(tablet){
-		&:hover::before {
-			background: linear-gradient(40deg, $red 0%, $purple 80%);
-			transition: all 0.4s ease-in-out;
+		&:hover::before, &:hover::after {
+			background: rgba($white, 0.2);
 		}
 	}
 
@@ -413,11 +441,11 @@ p, .page__article ul li {
 		}
 
 		@include breakpoint(laptop){
-			font-size: rem-calc(40);
+			font-size: rem-calc(42);
 		}
 
 		@include breakpoint(desktop){
-			font-size: rem-calc(45);
+			font-size: rem-calc(48);
 		}		
 	}
 }
@@ -438,6 +466,22 @@ p, .page__article ul li {
 			font-size: rem-calc(34);
 		}		
 	}	
+
+	h4 {
+		font-size: rem-calc(22);
+
+		@include breakpoint(tablet){
+			font-size: rem-calc(26);
+		}
+
+		@include breakpoint(laptop){
+			font-size: rem-calc(28);
+		}
+
+		@include breakpoint(desktop){
+			font-size: rem-calc(30);
+		}		
+	}	
 }
 
 .page--light {
@@ -450,7 +494,7 @@ p, .page__article ul li {
 } 
 
 .page__article {
-	max-width: rem-calc(1000);
+	max-width: rem-calc(960);
 	margin: rem-calc(40) auto;
 
 	@include breakpoint(desktop){
@@ -565,6 +609,8 @@ p, .page__article ul li {
 }
 
 .readmore {
+
+	display: inline-block;
 	font-family: $header-font-family;
 	font-weight: 900;
 	color: $white;
