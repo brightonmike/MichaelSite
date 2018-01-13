@@ -220,7 +220,7 @@ p, .page__article ul li {
 	@include breakpoint(tablet){
 		position: relative;
 		overflow: hidden;
-
+    
 		&::before, &::after {
 			content: '';
 			width: 100%;
@@ -609,6 +609,7 @@ p, .page__article ul li {
 }
 
 .readmore {
+
 	display: inline-block;
 	font-family: $header-font-family;
 	font-weight: 900;
