@@ -64,9 +64,9 @@ button.focus();
 
 Handling keyboard events and tabbing isn't all of it. We also need to dynamically update the aria-roles of the modal. By default, in our mark-up we should let the screen readers know the modal is hidden. We can do this by using the following mark-up.
 
-<code class="language-markup">
-`<div class='modal js-modal' aria-hidden='true' role='dialog' aria-labelledby='dialog-title'></div>`
-</code>
+<pre><code class="language-markup">
+<div class='modal js-modal' aria-hidden='true' role='dialog' aria-labelledby='dialog-title'></div>
+</code></pre>
 
 It's helpful too to specify the role of the `<div>` is a dialog, as effectively, that's the behaviour we're creating. When we trigger the modal to open, we can then update the hidden attribute.
 
