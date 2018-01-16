@@ -15,7 +15,7 @@ When you’re adding JavaScript components to web pages, they won’t be straigh
 
 Firstly, we want to be able to grab all the nodes within our modal but only those which are focusable. Thanks to accessibility advocate Heydon Pickering there’s a nice simple way to do this.
 
-<pre><code class="language-js">
+<pre><code class="language-javascript">
 let content = modal.querySelector('[role="document"]');
 
 let focusable = content.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"]');
@@ -27,7 +27,7 @@ We're querying all focusable elements within the `[role="document"]` element ins
 
 You want the focus to move to the first element when the modal is opened. In the case of this component, this is the close button. But you can just attach it to the `firstFocusable` element. This should sit within your function that opens the modal.
 
-<pre><code class="language-js">
+<pre><code class="language-javascript">
 firstFocusable.focus();
 </code></pre>
 
@@ -35,7 +35,7 @@ Once the modal is open, you want keyboard users to only be able to tab through t
 
 So, we effectively trap them within the modal when open by focusing back to the first element when the last element is tabbed.
 
-<pre><code class="language-js">
+<pre><code class="language-javascript">
 lastFocusable.addEventListener('keydown', (e) => {
 	if ((e.keyCode || e.which) === 9) {
 		firstFocusable.focus();
@@ -46,7 +46,7 @@ lastFocusable.addEventListener('keydown', (e) => {
 
 What now happens is when the modal is open, tabbing cycles you through the content of the modal. If they want to exit the modal, they can either do so by focusing on the close button and triggering with the space bar - or we can allow them to hit the escape key at any time to exit the modal. 
 
-<pre><code class="language-js">
+<pre><code class="language-javascript">
 modal.addEventListener('keydown', (e) => {
 	if (e.keyCode == 27) {
 		this.closeModal();
@@ -56,7 +56,7 @@ modal.addEventListener('keydown', (e) => {
 
 But what about when we close the modal? We want to take the user's focus back to where it was when they originally opened it. This is pretty simple because this will always be the button they used to open it. So, within our close modal function, we just re-focus the button.
 
-<pre><code class="language-js">
+<pre><code class="language-javascript">
 button.focus();
 </code></pre>
 
@@ -64,14 +64,14 @@ button.focus();
 
 Handling keyboard events and tabbing isn't all of it. We also need to dynamically update the aria-roles of the modal. By default, in our mark-up we should let the screen readers know the modal is hidden. We can do this by using the following mark-up.
 
-<pre><code class="language-js">
+<pre><code class="language-javascript">
 <div class="modal js-modal" aria-hidden="true" role="dialog" aria-labelledby="dialog-title">
 </div>
 </code></pre>
 
 It's helpful too to specify the role of the `<div>` is a dialog, as effectively, that's the behaviour we're creating. When we trigger the modal to open, we can then update the hidden attribute.
 
-<pre><code class="language-js">
+<pre><code class="language-javascript">
 modal.setAttribute('aria-hidden', 'false');
 </code></pre>
 
