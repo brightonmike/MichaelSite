@@ -13,7 +13,7 @@ I digress. So how have I gone about making the JavaScript components more access
 
 When you’re adding JavaScript components to web pages, they won’t be straight up accessible to keyboard users. HTML elements such as `<div>` and `<ul>` are not accessible to keyboards, because they aren’t tab-able. Luckily, there’s ways around this. For a modal component, I wanted to make sure that keyboard users could tab correctly around the content of the modal when open. Further, I needed to make sure that when they close the modal, the focus would return to where they were when they opened it.
 
-Firstly, we want to be able to grab all the nodes within our modal but only those which are focusable. Thanks to accessibility advocate Heydon Pickering there’s a nice simple way to do this.
+Firstly, we want to be able to grab all the nodes within our modal but only those which are focusable. Thanks to accessibility advocate <a href="http://heydonworks.com/" target="_blank" rel="noreferrer noopener">Heydon Pickering</a> there’s a nice simple way to do this.
 
 <pre><code class="language-javascript">
 let content = modal.querySelector('[role="document"]');
