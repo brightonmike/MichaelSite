@@ -19,7 +19,7 @@
 
     <main class="articlegroup" id="start">
         <h6>Writings</h6>
-        {{ range first 6 .Data.Pages }}
+        {{ range first 12 .Data.Pages }}
         {{ if eq .Type "posts" }}
                 <article class="article">
                     <a class="article__inner" href="{{ .Permalink }}">
