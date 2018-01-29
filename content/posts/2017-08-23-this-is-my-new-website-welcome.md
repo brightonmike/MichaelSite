@@ -1,5 +1,5 @@
 ---
-title: 'This is my new website, welcome'
+title: 'New website!'
 date: 2017-08-23T15:36:07.516Z
 image: null
 ---
