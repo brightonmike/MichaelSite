@@ -13,20 +13,23 @@ That said - Webpack does not eliminate entirely the need to use a task runner. F
 
 So how do we use them together? Thankfully, webpack-stream is on hand to help. You can install it by running `npm install webpack-stream` and then import it into your Gulpfile as so:
 
-```
+<pre><code class="language-javascript">
 webpack = require('webpack-stream')
-```
+</code></pre>
+
 Within our Gulpfile, we can add a simple task like this:
-```
+
+<pre><code class="language-javascript">
 gulp.task('build-js', function() {
 return gulp.src(path.resolve(__dirname, './assets/app/app.js'))
   .pipe(webpack( require('./webpack.config.js') ))
   .pipe(gulp.dest('assets/js/'));
 });
-```
+</code></pre>
+
 As for the Webpack config file itself, this is pretty simple too.
 
-```
+<pre><code class="language-css">
 const path = require('path');
 const webpack = require('webpack');
 
@@ -55,13 +58,13 @@ module.exports = {
       ]
     }
 }
-```
+</code></pre>
 
 It's worth noting I've deliberately left in the exclude parameter. You may not need this, but I found it useful as it allowed me to exclude the `node_modules` folder whilst at the same time bundling any JavaScript libraries I actually needed.
 
 I also found using `babel-preset-env` much more painless than `babel-preset-2015`. The former also allows you to more cleverly specify the browser support you need for your bundle by passing in values to your `.babelrc` file. An example is as follows:
 
-```
+<pre><code class="language-json">
 {
   "presets": [
     ["env", {
@@ -75,5 +78,6 @@ I also found using `babel-preset-env` much more painless than `babel-preset-2015
     }]
   ]
 }
-```
+</code></pre>
+
 So there you have it - an example configuration for using Webpack and Gulp together. You can now bundle your JavaScript with Webpack but use Gulp for other tasks you might need for your project.
