@@ -1,9 +1,10 @@
+/* eslint-disable */
 // Grab our gulp packages
 var gulp  = require('gulp'),
     gutil = require('gulp-util'),
+    postcss = require('gulp-postcss'),
     sass = require('gulp-sass'),
-    //cssnano = require('gulp-cssnano'),
-    autoprefixer = require('gulp-autoprefixer'),
+    autoprefixer = require('autoprefixer'),
     sourcemaps = require('gulp-sourcemaps'),
     jshint = require('gulp-jshint'),
     stylish = require('jshint-stylish'),
@@ -15,24 +16,39 @@ var gulp  = require('gulp'),
     babel = require('gulp-babel'),
     browserSync = require('browser-sync').create();
 
-// Compile Sass, Autoprefix and minify
-gulp.task('styles', function() {
+gulp.task('styles', function () {
     return gulp.src('./assets/styles/**/*.scss')
         .pipe(plumber(function(error) {
             gutil.log(gutil.colors.red(error.message));
             this.emit('end');
         }))
-        .pipe(sourcemaps.init()) // Start Sourcemaps
-        .pipe(sass({ outputStyle: 'compressed' }))
-        .pipe(autoprefixer({
-            browsers: ['last 3 versions'],
-            cascade: false
-        }))
-        .pipe(gulp.dest('./static/css/'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(sourcemaps.write('.')) // Creates sourcemaps for minified styles
-        .pipe(gulp.dest('./static/css/'))
+        .pipe(sourcemaps.init())
+        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+        .pipe(postcss([autoprefixer({
+            browsers: ['last 2 versions', 'ie 11']
+        })]))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./static/css/'));
 });
+
+// Compile Sass, Autoprefix and minify
+// gulp.task('styles', function() {
+//     return gulp.src('./assets/styles/**/*.scss')
+//         .pipe(plumber(function(error) {
+//             gutil.log(gutil.colors.red(error.message));
+//             this.emit('end');
+//         }))
+//         .pipe(sourcemaps.init()) // Start Sourcemaps
+//         .pipe(sass({ outputStyle: 'compressed' }))
+//         .pipe(autoprefixer({
+//             browsers: ['last 3 versions'],
+//             cascade: false
+//         }))
+//         .pipe(gulp.dest('./static/css/'))
+//         .pipe(rename({suffix: '.min'}))
+//         .pipe(sourcemaps.write('.')) // Creates sourcemaps for minified styles
+//         .pipe(gulp.dest('./static/css/'))
+// });
 
 // gulp.task('admin', function () {
 //     gulp.src('./assets/admin/*')

@@ -1,0 +1,77 @@
+.page {
+	background: darken($primary, 6%);
+	padding: $global-padding;
+	min-height: 100vh;
+	
+	@include breakpoint(tablet){
+		padding: $global-padding $global-padding*2;
+	}
+
+	h1 {
+		color: $secondary;
+		font-size: rem-calc(32);
+
+		@include breakpoint(tablet){
+			font-size: rem-calc(36);
+		}
+
+		@include breakpoint(laptop){
+			font-size: rem-calc(42);
+		}
+
+		@include breakpoint(desktop){
+			font-size: rem-calc(48);
+		}		
+	}
+}
+
+
+.page--light {
+	background: lighten($primary, 72%);
+	color: darken($primary, 10%);
+
+	h1, h2, h3, h4, h5, h6, p, .page__article ul li {
+		color: darken($primary, 10%);
+	}
+} 
+
+.page__article {
+	max-width: rem-calc(960);
+	margin: rem-calc(40) auto;
+
+	@include breakpoint(desktop){
+		margin: rem-calc(100) auto;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: 1em;
+		line-height: 1.1;
+	}
+	
+	ul li {
+		color: $text-color;
+	}
+
+	p, ul li {
+		word-wrap: break-word;
+		a {
+			color: $secondary;
+
+			&:hover {
+				color: darken($secondary, 5%);
+			}
+
+			&:active {
+				color: darken($secondary, 8%);
+			}
+
+			&:visited {
+				color: darken($secondary, 8%);
+			}						
+		}
+		@include breakpoint(desktop){
+			line-height: 1.8;
+			margin-bottom: 1.5em;
+		}
+	}
+}

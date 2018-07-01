@@ -1,0 +1,43 @@
+.articlegroup {
+	padding: $global-padding 0;
+	background: darken($primary, 5%);
+
+	h6 {
+		padding: 0 $global-padding;
+		text-align: center;
+
+		@include breakpoint(tablet){
+			padding: $global-padding $global-padding*2;
+		}
+
+	}
+
+	// css grid
+    display: grid;
+    grid-gap: $grid-gap/2;
+    grid-template-columns: minmax($column-min, $column-max);
+    grid-auto-rows: minmax($row-min, $row-max);
+
+    @include breakpoint(laptop){
+    	grid-template-columns: minmax($column-min, 50%) minmax($column-min, 50%);
+    }
+
+    @include breakpoint(desktop){
+    	grid-template-columns: minmax($column-min, 33.34%) minmax($column-min, 33.34%) minmax($column-min, 33.34%);
+    }
+
+    h6 {		
+    	@include breakpoint(laptop){
+			grid-column-start: span 2;
+		}
+		
+    	@include breakpoint(desktop){
+			grid-column-start: span 3;
+		}		
+	}
+
+}
+
+.articlegroup--work {
+	background: $primary;
+}

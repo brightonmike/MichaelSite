@@ -1,0 +1,57 @@
+.pageheader {
+	background: $primary;
+	position: relative;
+	z-index: 6;
+	padding: $global-padding;
+
+	h2, h4 {
+		margin: 0;
+	}
+
+	h2, a {
+		position: relative;
+		z-index: 3;
+		color: $white;
+		text-decoration: none;
+	}
+
+	h2 {
+		a:hover {
+			color: $secondary;
+			text-decoration: underline;
+		}
+	}
+
+	h4 {
+		font-weight: 900;
+		font-style: italic;
+		font-size: rem-calc(14);
+		line-height: 1;
+		margin: rem-calc(14 0 0);
+		text-transform: uppercase;
+		letter-spacing: 4px;
+
+		background: linear-gradient(20deg, $red 0%, $purple 80%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		@include breakpoint(laptop){
+			font-size: rem-calc(18);
+			letter-spacing: 9px;
+		}
+
+		@include breakpoint(desktop){
+			font-size: rem-calc(22);
+			letter-spacing: 11px;
+		}
+	}
+
+	@include breakpoint(tablet){
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: $global-padding $global-padding*2;
+	}
+
+
+}
