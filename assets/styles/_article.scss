@@ -1,0 +1,137 @@
+.article {
+	h2, p, a {
+		position: relative;
+		z-index: 3;
+	}
+
+	h2, h2 a {
+		color: $secondary;
+	}
+
+	a {
+		color: $white;
+	}
+
+	h2, p {
+		margin-bottom: 0.8em;
+	}
+
+	p {
+		word-wrap: break-word;
+		line-height: 1.5;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	@include breakpoint(tablet){
+		position: relative;
+		overflow: hidden;
+    
+		&::before, &::after {
+			content: '';
+			width: 100%;
+			height: rem-calc(2);
+
+			position: absolute;
+			z-index: 2;
+			top: 50%;
+
+			transform-origin: 50% 0;
+			transform: rotate(0deg);
+			transition: all 0.3s ease-in-out;
+
+			background: rgba($primary, 0);
+		}
+
+		&::before {
+			left: 0;
+		}
+
+		&::after {
+			right: 0;
+		}
+
+		&:hover::before {
+			transform: rotate(45deg);
+			background: $primary;
+		}
+
+		&:hover::after {
+			transform: rotate(-45deg);
+			background: $primary;
+		}
+	}
+}
+
+.article--work {
+	position: relative;
+	z-index: 5;
+
+	@include breakpoint(tablet){
+		&:hover::before,
+		&:hover::after {
+			background: rgba($white, 0.2);
+		}
+	}
+
+	.readmore {
+		border-color: $red;
+
+		&:hover {
+			border-color: $purple;
+		}
+	}
+
+}
+
+.article__inner {
+	display: block;
+	text-align: center;
+	height: 100%;
+	padding: $global-padding;
+
+	&:focus {
+		box-shadow: inset 0px 0px 1px 0px $secondary;
+	}
+
+	@include breakpoint(tablet){
+		padding: $global-padding $global-padding*2;
+	}
+}
+
+
+.article__content {
+	h3 {
+		font-size: rem-calc(26);
+
+		@include breakpoint(tablet){
+			font-size: rem-calc(30);
+		}
+
+		@include breakpoint(laptop){
+			font-size: rem-calc(32);
+		}
+
+		@include breakpoint(desktop){
+			font-size: rem-calc(34);
+		}		
+	}	
+
+	h4 {
+		font-size: rem-calc(22);
+
+		@include breakpoint(tablet){
+			font-size: rem-calc(26);
+		}
+
+		@include breakpoint(laptop){
+			font-size: rem-calc(28);
+		}
+
+		@include breakpoint(desktop){
+			font-size: rem-calc(30);
+		}		
+	}	
+}

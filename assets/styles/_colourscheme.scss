@@ -1,0 +1,55 @@
+.colourscheme {
+	display: inline-block;
+	max-width: rem-calc(1000);
+	margin: 0 auto;
+	font-size: rem-calc(14);
+
+	@include breakpoint(desktop){
+		margin: 0 auto;
+	}	
+}
+
+.colourscheme input[type=checkbox] {
+	appearance: none;
+	display: block;
+	position: relative;
+	background: $white;
+	width: rem-calc(100);
+	height: rem-calc(20);
+	margin: $global-padding/2 $global-padding 0 0;
+	box-shadow: 0px 0px 0px 1px $medium-gray;
+	border-radius: 8px;
+
+	&:hover {
+		box-shadow: 0px 0px 0px 1px $secondary;
+	}
+
+	&:focus {
+		outline: none;
+		box-shadow: 0px 0px 0px 2px $secondary;
+	}
+
+	@include breakpoint(laptop){
+		margin-left: 0;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		width: 50%;
+		top: rem-calc(0);
+		bottom: rem-calc(0);
+		left: rem-calc(0);
+		background: $secondary;
+		transition: 0.1s ease;
+		border-radius: 8px;
+	}
+
+}
+
+.colourscheme input[type=checkbox]:checked {
+	&::after {
+		left: 50%;
+	}
+}
+

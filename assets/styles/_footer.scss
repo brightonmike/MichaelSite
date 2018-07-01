@@ -1,0 +1,22 @@
+footer {
+	text-align: center;
+	padding: $global-padding;
+	background: darken($primary, 4%);
+	border-top: 1px solid rgba($primary-light, 0.2);
+
+	p {
+		margin:0;
+	}
+
+	p a {
+		color: $secondary;
+		margin: rem-calc(5 15);
+		text-decoration: none;
+		border-bottom: 1px dotted $secondary;
+
+		&:hover {
+			color: $secondary;
+			border-bottom: 1px solid $secondary;
+		}
+	}
+}
