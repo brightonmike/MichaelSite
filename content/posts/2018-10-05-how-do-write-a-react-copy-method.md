@@ -1,6 +1,6 @@
 ---
 title: How do write a React copy method
-date: '2018-10-05 10:13am'
+date: 2018-10-05T11:24:00.322Z
 ---
 I recently needed to create a method for React which would copy some text in an input on user click. Turns out this wasn't quite as straightforward as I'd hoped.
 
