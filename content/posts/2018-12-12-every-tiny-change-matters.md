@@ -7,15 +7,15 @@ Before I moved to e-commerce development, I predominantly worked on websites tha
 
 Since moving to e-commerce, it sounds obvious, but the hard reality is that every little HTML tag suddenly takes on a whole new level of importance. Take this humble line of code from a React component:
 
-```
+<pre><code class="language-css">
 <button styleName="js-action__button" id={elId} />
-```
+</code></pre>
 
 There's nothing really wrong with it. It's an empty div tag which a bunch of JS hooks on to. But in Firefox, it didn't work. The following, however, did:
 
-```
+<pre><code class="language-css">
 <div styleName="js-action__button" id={elId} />
-```
+</code></pre>
 
 This seems kinda strange. But what was happening is that the JS hooking onto the element was creating a button within an iframe. In Firefox, the events attached to the button within the iframe were being cancelled. This is technically correct - you shouldn't have buttons within buttons. 
 
