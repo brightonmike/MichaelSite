@@ -1,6 +1,7 @@
 ---
 title: Every tiny change matters
-date: '2018-12-12 04:40pm'
+date: 2018-12-12T16:58:43.961Z
+image: null
 ---
 Before I moved to e-commerce development, I predominantly worked on websites that didn't really _do_ anything tangible. It would be unfair to say they didn't generate revenue for their businesses, they definitely did just that, but without figures and statistics it was always hard to quantify. I never really fully understood the gravity of the effects of my work on a business.
 
