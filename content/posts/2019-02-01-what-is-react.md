@@ -1,6 +1,6 @@
 ---
 title: What is React?
-date: '2019-02-01T15:10:58.00Z'
+date: '2019-02-01T19:10:58.00Z'
 ---
 When it comes to the way we talk about Front-end, React seems to be a commonly misunderstood term. What exactly are we talking about, when we talk about React? 
 
