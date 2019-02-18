@@ -2,7 +2,7 @@
 title: The perils of third-party JavaScript
 date: '2019-02-14'
 ---
-I work in a sector of the web industry where third-parties are particularly heavily relied on. They provide all sorts of functionality - marketing, data analysis, \*cough\* tracking, social media and more. We should always try to understand the business decisions behind using third-party services. But equally, we should also consider their impact.
+I work in a sector of the web industry where third-parties are particularly heavily relied on. They provide all sorts of functionality - marketing, data analysis, 🤔tracking, social media and more. We should always try to understand the business decisions behind using third-party services. But equally, we should also consider their impact.
 
 ## Slower sites
 
@@ -18,4 +18,4 @@ It's even scarier to think this is just one third-party script. You can imagine 
 
 ## Solutions?
 
-There are some things we can do to try to mitigate the impact. We can add the \`defer\` attribute to JavaScript files so they don't block page rendering.
+There are some things we can do to try to mitigate the impact. We can add the \`defer\` attribute to JavaScript files so they don't block page rendering. We can also feedback, often via Github, to the authors of the third-party extensions and help them to improve performance.
