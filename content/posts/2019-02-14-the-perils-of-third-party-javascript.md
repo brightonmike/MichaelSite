@@ -19,3 +19,5 @@ It's even scarier to think this is just one third-party script. You can imagine 
 ## Solutions?
 
 There are some things we can do to try to mitigate the impact. We can add the \`defer\` attribute to JavaScript files so they don't block page rendering. We can also feedback, often via Github, to the authors of the third-party extensions and help them to improve performance.
+
+But sometimes we'll need a technical solution.
